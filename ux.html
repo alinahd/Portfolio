@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inspo Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+      background: #fff;
+      color: #111;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      padding: 1.2rem;
+      font-size: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #0047ff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #000;
+    }
+
+    /* Section layout */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3rem;
+      padding: 4rem 6rem;
+    }
+
+    .left, .right {
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      color: #b34dfb;
+    }
+
+    .problem-text {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+
+
+  </style>
+</head>
+<body>
+ 
+  <div class="container">
+    <!-- Left side -->
+    <div class="left">
+      <div class="section-title">Pain Points</div>
+      <h2 class="highlight">Knowledge and skill gap</h2>
+      <p>
+        Most times, people resort to professional help because they can’t confidently diagnose the problem or identify required parts, and they’re afraid of causing more damage than progress.
+      </p>
+
+      <div class="section-title">Problem statement:</div>
+      <div class="quote">“Can you fix this for me? I’ll get you dinner.”</div>
+      <p class="problem-text">
+        Homeowners & renters mostly face a lose-lose situation when it comes to assembly & repairs that can be done DIY. They spend $50–$1000 per home project on external help or attempt repairs that lead to frustration & wasted time.
+      </p>
+      <p class="problem-text">
+        This keeps them trapped in a cycle of dependency rather than being more self-sufficient.
+      </p>
+    </div>
+
+    <!-- Right side -->
+    <div class="right">
+      <h2 class="highlight">Complex instructions/manuals</h2>
+      <p>
+        Assembly and repair instructions can often be overwhelming or confusing, with no way to verify correct execution until something goes visibly wrong, wasting time and causing frustration.
+      </p>
+    </div>
+  </div>
+
+
+</body>
+</html>

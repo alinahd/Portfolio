@@ -5,119 +5,107 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Digital Product UX</title>
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        line-height: 1.3; 
-    }
 
-    .section {
-        margin: 2% 1%;
-        font-size: 20px;
-    }
-
-    .hmw {
-    color: rgb(2, 0, 128);
-    font-weight: bold; 
+body{
+    margin: 0;
+    padding-left: 5%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
+.section1 {
+    margin-top: 5%;
+}
 
-    .section h1 {
-        margin: 0 0 0.5em 0; 
-        font-size: 25px;
-        line-height: 1.2;
-    }
+.section2 {
+    margin-top: 2%;
+}
 
-    .section p {
-        margin: 0.5em 0; 
-        line-height: 1.3;
-    }
+.title{
+    font-size: 20px;
+    color: blue;
+    margin-bottom: 0.5rem;
+}
 
-    .section ul {
-        padding-left: 25px;
-        margin-top: 0.5em;
-    }
+p{
+    font-size: 16px;
+}
 
-    .section li {
-        margin-bottom: 0.5em;
-    }
+.features-matrix{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-top: 2rem;
+    font-size: 16px;
+}
 
+.features-left{
+    flex: 1;
+    line-height: 1.5rem;
+}
 
-    .images-section {
-        display: flex;
-        gap: 12px;
-        margin: 3% 1% 5% 1%;
-        flex-wrap: wrap;
-    }
+.matrix{
+    flex: 1;
+}
 
-    .images-container {
-        display: flex;
-        flex-direction: column; 
-    }
+.matrix img{
+    max-width: 70%;
+    height: auto;
+}
 
-    .images-container h2 {
-        margin: 0 0 0.3em 0; 
-        font-size: 16px;
-    }
+.analysis {
+    margin-top: 5rem;   
+    text-align: left;   
 
-    .img-large {
-        width: 100%;
-        height: auto;
-    }
+}
 
-    .img-small {
-        width: 100%;
-        height: auto;
-    }
+.analysis img {
+    max-width: 70%;    
+    height: auto;
+    display: block;
+}
 
+.analysistxt{
+    font-size: 14px;
+    color: blue;
+    margin-top: 8rem;
+    margin-bottom: 0rem;
+}
 
-    .large-container {
-        width: 60%;
-    }
-
-    .small-container {
-        width: 39%;
-    }
 
 </style>
 </head>
 <body>
 
+<div class="section1">
+    <h2 class="title">Problem Statement</h2>
+    <p>How might we keep children engaged with storytelling so that reading feels fun and interactive?</p>
+</div>
 
-    <div class="section">
-        <h1>Problem Statement</h1>
-        <p><span class="hmw">How might we</span> keep children engaged with storytelling so that reading feels fun and interactive?</p>
-    </div>
-    
+<div class="section2">
+    <h2 class="title">Value Proposition</h2>
+    <p>Stories don’t just belong on paper. With AR, they unfold around you — blending sound, visuals, and interactive environments into an adventure you can step inside. <br>This app is the immersive AR storybook app that allows kids and families to experience stories through interactive visuals, spatial audio, and environments that come to life in their own space.</p>
+</div>
 
-    <div class="section">
-        <h1>Value Proposition</h1>
-        <p>Stories don’t just belong on paper. With AR, they unfold around you — blending sound, visuals, and interactive environments into an adventure you can step inside.</p>
-        <p>This app is the immersive AR storybook app that allows kids and families to experience stories through interactive visuals, spatial audio, and environments that come to life in their own space.</p>
-    </div>
-
-
-    <div class="section">
-        <h1>Key Features</h1>
+<div class="features-matrix">
+    <div class="features-left">
+        <h2 class="title">Key Features</h2>
         <ul>
-            <li><strong>AR World Integration:</strong> Stories unfold in the child’s own room with 3D characters and environments.</li>
+            <li><strong>AR World Integration:</strong> Stories unfold in the child’s own room with 3D characters and environments.</li> 
             <li><strong>Synced Audio-Visual Narration:</strong> Narration, sound effects, and visuals progress together.</li>
             <li><strong>Multi-Theme Library:</strong> From fairy tales to educational adventures, stories adapt to different moods and learning goals.</li>
         </ul>
     </div>
 
-  
-    <div class="images-section">
-        <div class="images-container large-container">
-            <h2>Competitive Analysis</h2>
-            <img src="images/digitalux/Frame 12.jpg" alt="Competitive Analysis" class="img-large">
-        </div>
-        <div class="images-container small-container">
-            <h2>2x2 Matrix</h2>
-            <img src="images/digitalux/Frame 11.jpg" alt="2x2 Matrix" class="img-small">
-        </div>
+    <div class="matrix">
+        <img src="images/digitalux/Frame 11.jpg" alt="2x2 matrix">
     </div>
+</div>
+
+<div class="analysistxt"><h2>Competitive Analayis</h2></div>
+<div class="analysis"><img src="images/digitalux/Frame 12.jpg" alt="competitive analysis">
+</div>
+
 
 </body>
 </html>
