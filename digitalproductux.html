@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Product UX</title>
   <style>
-    /* Base font sizing - comfortable, responsive */
-    :root {
-      font-size: clamp(17px, 1vw + 14px, 19px);
-    }
-
     body {
       margin: 0;
       padding: 0;
       background-color: #ffffff;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Open Sans", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       color: #111;
       line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     /* Title */
     .title {
-      margin: 28px 60px 10px 60px;
+      margin: 40px 60px 20px 60px;
     }
-
     .title h1 {
-      font-size: clamp(30px, 2.5vw, 40px);
-      font-weight: 600;
+      font-size: 2rem;
+      font-weight: 500;
       margin: 0;
       text-align: left;
       color: rgb(217, 26, 169);
       text-transform: uppercase;
-      letter-spacing: 0.6px;
     }
 
     /* Content wrapper */
     .content {
-      margin: 8vh auto 60px auto; /* breathing space */
-      max-width: 1100px;          /* balanced column width */
-      padding: 0 40px;            /* side padding */
+      margin: 40px 60px;
+      max-width: 1200px;
     }
 
     .section {
@@ -48,42 +38,36 @@
       text-align: left;
     }
 
-    /* Section headings */
     .section h2 {
-      font-size: clamp(15px, 1vw + 10px, 20px);
+      font-size: 1rem;
       text-transform: uppercase;
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: 10px;
+      text-align: left;
       color: rgb(217, 26, 169);
-      letter-spacing: 0.8px;
     }
 
-    /* Two-column / side-by-side layout */
+    /* Side-by-side layout */
     .row {
       display: flex;
       gap: 40px;
       align-items: flex-start;
       flex-wrap: wrap;
     }
+
     .column {
       flex: 1;
       min-width: 300px;
+      text-align: left;
     }
 
-    /* Body text */
-    p, li {
-      font-size: clamp(17px, 1vw + 12px, 18.5px);
-      line-height: 1.7;
-      color: #111;
-    }
-
-    /* Features list */
+    /* Features */
     .features ul {
       margin-left: 20px;
       padding-left: 0;
     }
     .features li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     /* Images */
@@ -91,16 +75,15 @@
       width: 100%;
       height: auto;
       display: block;
-      margin: 12px 0;
+      margin: 10px 0;
       mix-blend-mode: multiply;
     }
 
-    /* Personas visuals */
+    /* User Personas */
     .user_personas img.persona {
       width: 100%;
-      max-width: 760px;
+      max-width: 700px;
       margin-bottom: 20px;
-      display:block;
     }
 
     .user_personas .row {
@@ -110,46 +93,39 @@
       justify-content: center;
     }
     .user_personas .column {
-      flex: 1 1 420px;
-      text-align: left;
+      flex: 1 1 400px;
+      text-align: center;
     }
 
-    /* Empathy maps */
+    /* Empathy Maps */
     .empic1 img,
     .empic2 img {
       width: 95%;
-      max-width: 760px;
+      max-width: 700px;
       display: block;
-      margin: 18px auto 0 auto;
+      margin: 20px auto 0 auto;
     }
 
     .empathy-title {
-      font-weight: 700;
+      text-align: left;
+      font-weight: 600;
       text-transform: uppercase;
       color: rgb(217, 26, 169);
-      margin-bottom: 12px;
+      margin-bottom: 20px;
     }
 
-    /* Analysis / Journey images */
+    /* Analysis + Journey */
     .analysis img,
     .user_journey img {
       width: 100%;
-      max-width: 1000px;
+      max-width: 900px;
       display: block;
     }
 
     .user_journey {
       display: flex;
       justify-content: center;
-      margin-top: 10px;
-    }
-
-    /* Small screens */
-    @media (max-width: 700px) {
-      .title { margin-left: 18px; margin-right: 18px; }
-      .content { margin-left: 18px; margin-right: 18px; margin-top: 6vh; }
-      .user_personas .column { text-align: center; }
-      .empathy-title { text-align: center; }
+      mix-blend-mode: multiply; 
     }
   </style>
 </head>
@@ -160,7 +136,6 @@
     <h1>Digital Product UX</h1>
   </div>
 
-  <!-- Content -->
   <div class="content">
 
     <!-- Problem + Value -->
@@ -178,7 +153,7 @@
       </div>
     </div>
 
-    <!-- Features + 2x2 Matrix -->
+    <!-- Features + Matrix -->
     <div class="row section">
       <div class="features column">
         <h2>Key Features</h2>
@@ -201,12 +176,12 @@
       <img src="images/digitalux/competitive analysis.jpg" alt="Competitive analysis chart">
     </div>
 
-    <!-- Personas + Empathy Maps -->
+    <!-- Personas -->
     <div class="section user_personas">
       <div class="row">
         <div class="column">
           <h2>User Persona 1 - Child</h2>
-          <img class="persona" src="images/digitalux/User persona_Isla.jpg" alt="User Persona Isla">
+          <img class="persona" src="images/digitalux/User persona_Isla.jpg" alt="User Persona Isla"><br>
           <div class="empic1">
             <div class="empathy-title">Empathy Maps</div>
             <img src="images/digitalux/emap.jpg" alt="Empathy Map Isla">
@@ -215,7 +190,7 @@
 
         <div class="column">
           <h2>User Persona 2 - Parent</h2>
-          <img class="persona" src="images/digitalux/User persona_Mina.jpg" alt="User Persona Mina">
+          <img class="persona" src="images/digitalux/User persona_Mina.jpg" alt="User Persona Mina"><br>
           <div class="empic2">
             <div class="empathy-title">Empathy Maps</div>
             <img src="images/digitalux/emap2.jpg" alt="Empathy Map Mina">
