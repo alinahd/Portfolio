@@ -25,14 +25,12 @@
       text-align: left;
       color: rgb(217, 26, 169);
       text-transform: uppercase;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
 
     /* Content wrapper */
     .content {
       margin: 40px 60px;
       max-width: 1200px;
-      margin-top: 14%;
     }
 
     .section {
@@ -72,7 +70,7 @@
       margin-bottom: 10px;
     }
 
-    /* Images general */
+    /* Images */
     .section img {
       width: 100%;
       height: auto;
@@ -83,44 +81,40 @@
 
     /* User Personas */
     .user_personas img.persona {
-      width: 100%;        /* fill column width */
-      max-width: 700px;   /* larger size */
+      width: 100%;
+      max-width: 700px;
       margin-bottom: 20px;
+    }
+
+    .user_personas .row {
+      display: flex;
+      gap: 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .user_personas .column {
+      flex: 1 1 400px;
+      text-align: center;
     }
 
     /* Empathy Maps */
     .empic1 img,
     .empic2 img {
-      width: 95%;       /* bigger for legibility */
-      max-width: 700px; /* increase max width */
+      width: 95%;
+      max-width: 700px;
       display: block;
-      margin: 20px auto 0 auto; /* center under persona */
+      margin: 20px auto 0 auto;
     }
 
-    /* User Personas layout */
-    .user_personas .row {
-      display: flex;
-      gap: 60px;         /* more space between columns */
-      flex-wrap: wrap;
-      justify-content: center;
-      mix-blend-mode: multiply;
-    }
-    .user_personas .column {
-      flex: 1 1 400px;    /* ensure columns are wide enough */
-      text-align: center;
-      justify-content: center;
-    }
-
-    /* Empathy Maps Title */
     .empathy-title {
       text-align: left;
       font-weight: 600;
       text-transform: uppercase;
       color: rgb(217, 26, 169);
-            margin-bottom: 20px;
+      margin-bottom: 20px;
     }
 
-    /* User Journey + Competitive Analysis */
+    /* Analysis + Journey */
     .analysis img,
     .user_journey img {
       width: 100%;
@@ -128,7 +122,6 @@
       display: block;
     }
 
-    /* Center the journey */
     .user_journey {
       display: flex;
       justify-content: center;
@@ -143,7 +136,6 @@
     <h1>Digital Product UX</h1>
   </div>
 
-  <!-- Content -->
   <div class="content">
 
     <!-- Problem + Value -->
@@ -151,7 +143,7 @@
       <div class="section column problem">
         <h2>Problem Statement</h2>
         <p>Traditional digital stories feel flat and disconnected, limiting immersion and engagement. Kids often lose interest in reading because storybooks can feel static compared to interactive media.</p>
-        <p><strong>How might we</strong> keep children engaged with storytelling so that reading feels fun and interactive?</em></p>
+        <p><strong>How might we</strong> keep children engaged with storytelling so that reading feels fun and interactive?</p>
       </div>
 
       <div class="section column value">
@@ -161,7 +153,7 @@
       </div>
     </div>
 
-    <!-- Key Features + 2x2 Matrix -->
+    <!-- Features + Matrix -->
     <div class="row section">
       <div class="features column">
         <h2>Key Features</h2>
@@ -184,25 +176,24 @@
       <img src="images/digitalux/competitive analysis.jpg" alt="Competitive analysis chart">
     </div>
 
-    <!-- Personas + Empathy Maps -->
+    <!-- Personas -->
     <div class="section user_personas">
-    
       <div class="row">
         <div class="column">
           <h2>User Persona 1 - Child</h2>
-          <img class="persona" src="images/digitalux/User persona_Mina.jpg" alt="User Persona Mina"><br><br>
+          <img class="persona" src="images/digitalux/User persona_Isla.jpg" alt="User Persona Isla"><br>
           <div class="empic1">
             <div class="empathy-title">Empathy Maps</div>
-            <img src="images/digitalux/emap.jpg" alt="Empathy Map Mina">
+            <img src="images/digitalux/emap.jpg" alt="Empathy Map Isla">
           </div>
         </div>
 
         <div class="column">
           <h2>User Persona 2 - Parent</h2>
-          <img class="persona" src="images/digitalux/User persona_Isla.jpg" alt="User Persona Isla">
-          <br><br>
+          <img class="persona" src="images/digitalux/User persona_Mina.jpg" alt="User Persona Mina"><br>
           <div class="empic2">
-            <img src="images/digitalux/emap2.jpg" alt="Empathy Map Isla">
+            <div class="empathy-title">Empathy Maps</div>
+            <img src="images/digitalux/emap2.jpg" alt="Empathy Map Mina">
           </div>
         </div>
       </div>
