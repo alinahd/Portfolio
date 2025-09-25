@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Digital Product UX</title>
   <style>
-    /* Base + responsive type */
-    :root{
-      /* responsive base font: min 16px, grows with viewport, max 20px */
-      font-size: clamp(16px, 1.2vw + 12px, 20px);
+    /* Base font sizing - comfortable, responsive */
+    :root {
+      font-size: clamp(17px, 1vw + 14px, 19px);
     }
 
     body {
@@ -26,9 +25,9 @@
     .title {
       margin: 28px 60px 10px 60px;
     }
-    /* responsive title size for large screens */
+
     .title h1 {
-      font-size: clamp(28px, 2.6vw, 44px);
+      font-size: clamp(30px, 2.5vw, 40px);
       font-weight: 600;
       margin: 0;
       text-align: left;
@@ -37,10 +36,11 @@
       letter-spacing: 0.6px;
     }
 
-    /* Content wrapper - restored top gap (8vh) so page breathes */
+    /* Content wrapper */
     .content {
-      margin: 8vh 60px 60px 60px; /* top gap maintained here */
-      max-width: 1400px;         /* wider for large-screen layout */
+      margin: 8vh auto 60px auto; /* breathing space */
+      max-width: 1100px;          /* balanced column width */
+      padding: 0 40px;            /* side padding */
     }
 
     .section {
@@ -48,9 +48,9 @@
       text-align: left;
     }
 
-    /* Section headings slightly larger and uppercase */
+    /* Section headings */
     .section h2 {
-      font-size: clamp(12px, 0.9vw + 8px, 18px);
+      font-size: clamp(15px, 1vw + 10px, 20px);
       text-transform: uppercase;
       font-weight: 700;
       margin-bottom: 10px;
@@ -70,9 +70,9 @@
       min-width: 300px;
     }
 
-    /* Body copy: bigger and easier to read on desktop */
+    /* Body text */
     p, li {
-      font-size: 1rem; /* 1rem = root font-size (clamped above) */
+      font-size: clamp(17px, 1vw + 12px, 18.5px);
       line-height: 1.7;
       color: #111;
     }
@@ -86,7 +86,7 @@
       margin-bottom: 12px;
     }
 
-    /* Images - keep full-width within their column */
+    /* Images */
     .section img {
       width: 100%;
       height: auto;
@@ -114,7 +114,7 @@
       text-align: left;
     }
 
-    /* Empathy maps under each persona */
+    /* Empathy maps */
     .empic1 img,
     .empic2 img {
       width: 95%;
@@ -134,7 +134,7 @@
     .analysis img,
     .user_journey img {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1000px;
       display: block;
     }
 
@@ -144,7 +144,7 @@
       margin-top: 10px;
     }
 
-    /* Small screens tweaks */
+    /* Small screens */
     @media (max-width: 700px) {
       .title { margin-left: 18px; margin-right: 18px; }
       .content { margin-left: 18px; margin-right: 18px; margin-top: 6vh; }
@@ -178,7 +178,7 @@
       </div>
     </div>
 
-    <!-- Key Features + 2x2 Matrix -->
+    <!-- Features + 2x2 Matrix -->
     <div class="row section">
       <div class="features column">
         <h2>Key Features</h2>
