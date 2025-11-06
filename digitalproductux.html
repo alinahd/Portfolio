@@ -3,202 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Digital Product UX</title>
+  <title>Ekko – Digital Product UX</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #ffffff;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #111;
-      line-height: 1.6;
+      background-color: #fff;
+      overflow-x: hidden; 
     }
 
-
-    .title {
-      margin: 40px 60px 20px 60px;
-    }
-    .title h1 {
-      font-size: 2rem;
-      font-weight: 500;
-      margin: 0;
-      text-align: left;
-      color: rgb(217, 26, 169);
-      text-transform: uppercase;
-    }
-
-
-    .content {
-      margin: 40px 60px;
-      max-width: 1200px;
-    }
-
-    .section {
-      margin-bottom: 60px;
-      text-align: left;
-    }
-
-    .section h2 {
-      font-size: 20px;
-      text-transform: uppercase;
-      font-weight: 600;
-      margin-bottom: 10px;
-      text-align: left;
-      color: rgb(217, 26, 169);
-    }
-
-
-    .row {
+    .container {
       display: flex;
-      gap: 40px;
+      justify-content: center;
       align-items: flex-start;
-      flex-wrap: wrap;
-    }
-
-    .column {
-      flex: 1;
-      min-width: 300px;
-      text-align: left;
-    }
-
-
-    .features ul {
-      margin-left: 20px;
-      padding-left: 0;
-    }
-    .features li {
-      margin-bottom: 10px;
-    }
-
-  
-    .section img {
       width: 100%;
+      transform: scale(1.16); 
+      transform-origin: top center; 
+    }
+
+    img {
+      width: 100%;
+      max-width: 1200px;
       height: auto;
       display: block;
-      margin: 10px 0;
-      mix-blend-mode: multiply;
-    }
-
-
-    .user_personas img.persona {
-      width: 100%;
-      max-width: 700px;
-      margin-bottom: 20px;
-    }
-
-    .user_personas .row {
-      display: flex;
-      gap: 60px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .user_personas .column {
-      flex: 1 1 400px;
-      text-align: center;
-    }
-
-    
-    .empic1 img,
-    .empic2 img {
-      width: 95%;
-      max-width: 700px;
-      display: block;
-      margin: 20px auto 0 auto;
-    }
-
-    .empathy-title {
-      text-align: left;
-      font-weight: 600;
-      text-transform: uppercase;
-      color: rgb(217, 26, 169);
-      margin-bottom: 20px;
-    }
-
-
-    .analysis img,
-    .user_journey img {
-      width: 100%;
-      max-width: 900px;
-      display: block;
-    }
-
-    .user_journey {
-      display: flex;
-      justify-content: center;
-      mix-blend-mode: multiply; 
     }
   </style>
 </head>
 <body>
-
-  <div class="title">
-    <h1>Digital Product UX</h1>
-  </div>
-
-  <div class="content">
-
-    <div class="row">
-      <div class="section column problem">
-        <h2>Problem Statement</h2>
-        <p>Traditional digital stories feel flat and disconnected, limiting immersion and engagement. Kids often lose interest in reading because storybooks can feel static compared to interactive media.</p>
-        <p><strong>How might we</strong> keep children engaged with storytelling so that reading feels fun and interactive?</p>
-      </div>
-
-      <div class="section column value">
-        <h2>Value Proposition</h2>
-        <p>Stories don’t just belong on paper. With AR, they unfold around you — blending sound, visuals, and interactive environments into an adventure you can step inside.</p>
-        <p>This app is the immersive AR storybook app that allows kids and families to experience stories through interactive visuals, spatial audio, and environments that come to life in their own space.</p>
-      </div>
-    </div>
-
-    <div class="row section">
-      <div class="features column">
-        <h2>Key Features</h2>
-        <ul>
-          <li><strong>AR World Integration:</strong> Stories unfold in the child’s own room with 3D characters and environments.</li>
-          <li><strong>Synced Audio-Visual Narration:</strong> Narration, sound effects, and visuals progress together.</li>
-          <li><strong>Multi-Theme Library:</strong> From fairy tales to educational adventures, stories adapt to different moods and learning goals.</li>
-        </ul>
-      </div>
-
-      <div class="column">
-        <h2>2x2 Matrix</h2>
-        <img src="images/digitalux/Frame 11.jpg" alt="2x2 matrix">
-      </div>
-    </div>
-
-    <div class="section analysis">
-      <h2>Competitive Analysis</h2>
-      <img src="images/digitalux/competitive analysis.jpg" alt="Competitive analysis chart">
-    </div>
-
-    <div class="section user_personas">
-      <div class="row">
-        <div class="column">
-          <h2>User Persona 1 - Child</h2>
-          <img class="persona" src="images/digitalux/User persona_Isla.jpg" alt="User Persona Isla"><br>
-          <div class="empic1">
-            <div class="empathy-title">Empathy Maps</div>
-            <img src="images/digitalux/emap.jpg" alt="Empathy Map Isla">
-          </div>
-        </div>
-
-        <div class="column">
-          <h2>User Persona 2 - Parent</h2>
-          <img class="persona" src="images/digitalux/User persona_Mina.jpg" alt="User Persona Mina"><br>
-          <div class="empic2">
-            <div class="empathy-title">Empathy Maps</div>
-            <img src="images/digitalux/emap2.jpg" alt="Empathy Map Mina">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section user_journey">
-      <h2>User Journey</h2>
-      <img src="images/digitalux/user journey.jpg" alt="User Journey">
-    </div>
-
+  <div class="container">
+    <img src="portfolio page.jpg" alt="Ekko Portfolio Page">
   </div>
 </body>
 </html>
