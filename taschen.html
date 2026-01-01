@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Taschen — Alinah Danish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* ========================================
+       RESET
+       ======================================== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        color: #1a1a1a;
+        background: #ffffff;
+        font-weight: 400;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    h1, h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        font-size: 42px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        margin-bottom: 20px;
+        color: #4A9B6F;
+    }
+
+    h4 {
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #1a1a1a;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .lead {
+        font-size: 22px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #1a1a1a;
+        margin-bottom: 32px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #333;
+        padding: 8px 0;
+        padding-left: 24px;
+        position: relative;
+    }
+
+    ul li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #4A9B6F;
+        font-weight: 600;
+    }
+
+    /* ========================================
+       LAYOUT
+       ======================================== */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 80px;
+    }
+
+    .container-reading {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 80px;
+        text-align: left;
+    }
+
+    section {
+        padding: 140px 0;
+    }
+
+    .section-narrow {
+        padding: 100px 0;
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: #000;
+        overflow: hidden;
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.85;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: white;
+        max-width: 900px;
+        padding: 0 80px;
+    }
+
+    .hero h1 {
+        color: white;
+        font-size: 96px;
+        margin-bottom: 24px;
+    }
+
+    .hero-lead {
+        font-size: 22px;
+        font-weight: 400;
+        color: white;
+        opacity: 0.95;
+        line-height: 1.6;
+        max-width: 640px;
+        margin: 0 auto;
+    }
+
+    /* ========================================
+       PROJECT META
+       ======================================== */
+    .project-meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        padding: 80px 0 60px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .meta-item {
+        text-align: left;
+    }
+
+    .meta-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #999;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .meta-value {
+        font-size: 16px;
+        color: #1a1a1a;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    /* ========================================
+       OVERVIEW
+       ======================================== */
+    .overview {
+        padding: 120px 0;
+    }
+
+    /* ========================================
+       CONTENT SECTIONS
+       ======================================== */
+    .content-section {
+        padding: 100px 0;
+    }
+
+    .content-section.alt {
+        background: #fafafa;
+    }
+
+    /* ========================================
+       IMAGE GRIDS
+       ======================================== */
+    .image-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 80px 0;
+    }
+
+    .image-grid-2 img {
+        width: 100%;
+        border-radius: 2px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .image-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin: 60px 0;
+    }
+
+    .image-grid-3 img {
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    .image-grid-4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        margin: 0;
+    }
+
+    .image-grid-4 img {
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       FULL BLEED IMAGES
+       ======================================== */
+    .full-bleed {
+        margin: 80px 0;
+    }
+
+    .full-bleed img {
+        width: 100%;
+    }
+
+    .instagram-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+        margin: 80px 0;
+    }
+
+    .instagram-gallery {
+        position: sticky;
+        top: 40px;
+    }
+
+    .instagram-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .image-block {
+        margin: 60px 0;
+    }
+
+    .image-block img {
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       TNS COLLABORATION SECTION
+       ======================================== */
+    .tns-images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+        margin: 60px 0;
+    }
+
+    .tns-images img {
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1200px) {
+        .container,
+        .container-reading {
+            padding: 0 60px;
+        }
+
+        .hero-content {
+            padding: 0 60px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        h1 { font-size: 64px; }
+        h2 { font-size: 36px; }
+        .hero h1 { font-size: 72px; }
+        .lead { font-size: 20px; }
+
+        .container,
+        .container-reading {
+            padding: 0 40px;
+        }
+
+        .hero-content {
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .project-meta {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .instagram-layout {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .instagram-gallery {
+            position: relative;
+            top: 0;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .image-grid-2,
+        .image-grid-3,
+        .tns-images {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 48px; }
+        h2 { font-size: 32px; }
+        .hero h1 { font-size: 52px; }
+        .hero-lead { font-size: 18px; }
+        .lead { font-size: 18px; }
+        p { font-size: 16px; }
+
+        body { font-size: 15px; }
+
+        .container,
+        .container-reading {
+            padding: 0 24px;
+        }
+
+        .hero-content {
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .project-meta {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .instagram-gallery {
+            max-width: 100%;
+        }
+
+        .image-grid-2 {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .image-grid-4 {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 28px; }
+        .hero h1 { font-size: 40px; }
+        .hero-lead { font-size: 16px; }
+    }
+</style>
+</head>
+
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <img src="images/eco taschen/logo2.jpg" alt="Eco Taschen" class="hero-image">
+    </section>
+
+    <!-- META -->
+    <div class="container">
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">Design Intern<br>Graphic Designer</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Timeline</div>
+                <div class="meta-value">Summer 2023</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tools</div>
+                <div class="meta-value">Adobe Photoshop, Illustrator, InDesign</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="overview">
+        <div class="container-reading">
+            <h3>Overview</h3>
+            <p class="lead">Eco Taschen was a women-led sustainable brand focused on eco-conscious, oxo-biodegradable packaging for everyday essentials such as sanitary bags, pamper bags, fridge/freezer bags, trash bags and garment bags.</p>
+            <p>As a Design Intern, I contributed to digital content and product packaging that reflected the brand's environmental values while engaging a wider audience through visual storytelling.</p>
+        </div>
+    </section>
+
+    <!-- INSTAGRAM CONTENT -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>My Contributions</h3>
+            <h2>Instagram Content</h2>
+            <p>I designed a series of social media posts and story templates that translated Eco Taschen's sustainable values into a cohesive and recognizable digital identity. The goal was to create a feed that felt natural, relatable, and rooted in the brand's eco-conscious ethos while remaining visually engaging.</p>
+            <p>Below are selected posts that showcase the visual direction and tone I worked on for the brand's Instagram presence.</p>
+        </div>
+
+        <div class="container">
+            <div class="instagram-layout">
+                <div class="instagram-gallery">
+                    <img src="images/eco taschen/Gallery.png" alt="Instagram Gallery">
+                </div>
+
+                <div class="image-grid-4">
+                    <img src="images/eco taschen/IMG_4334.jpg" alt="Instagram Post 1">
+                    <img src="images/eco taschen/IMG_4337.jpg" alt="Instagram Post 2">
+                    <img src="images/eco taschen/insta5.jpg" alt="Instagram Post 3">
+                    <img src="images/eco taschen/insta1.jpeg" alt="Instagram Post 4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TNS COLLABORATION -->
+    <section class="content-section alt">
+        <div class="container-reading">
+            <h3>Community Engagement</h3>
+            <h2>TNS x Taschen</h2>
+            <p>This collaboration between Eco Taschen and TNS (The Next Generation School), my high school in Lahore, Pakistan, started as an idea I proposed during my internship. I wanted to create something that combined community engagement with sustainable design, using my connection with TNS to bring together shared values of creativity, environmental responsibility and education.</p>
+            <p>The brand was looking for ways to increase brand awareness and to communicate its sustainability mission and so this partnership became a meaningful way to do that. The concept focused on a community clean-up drive that highlighted the brand's eco-friendly trash bags while also encouraging students and local residents to take part in hands-on environmental action.</p>
+        </div>
+
+        <div class="container">
+            <div class="tns-images">
+                <img src="images/eco taschen/tns2.jpeg" alt="TNS Collaboration 1">
+                <img src="images/eco taschen/tns1.jpeg" alt="TNS Collaboration 2">
+                <img src="images/eco taschen/tns3.jpeg" alt="TNS Collaboration 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGING DESIGNS -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>Product Design</h3>
+            <h2>Packaging Designs</h2>
+            <p>As a design intern at Eco Taschen, I contributed to the development of packaging concepts for upcoming product lines. I supported the design team in creating visuals that reflected the brand's commitment to sustainability and clean, functional design.</p>
+            <p>I helped refine graphic details to highlight the recyclable nature of the materials, focusing on clarity and function through minimal graphics, thoughtful type placement, and a balance between practicality and aesthetics. I also collaborated with the production team to ensure the final packaging felt cohesive and true to the brand's identity.</p>
+        </div>
+
+        <div class="container">
+            <div class="image-grid-2">
+                <img src="images/eco taschen/trashandpackaging.png" alt="Trash and Packaging">
+                <img src="images/eco taschen/diaper2.png" alt="Diaper Bags">
+                <img src="images/eco taschen/insta3.jpeg" alt="Instagram Post">
+                <img src="images/eco taschen/sanitarybagspack.png" alt="Sanitary Bags Pack">
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby — Alinah Danish</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+    /* ========================================
+       RESET
+       ======================================== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        color: #1a1a1a;
+        background: #ffffff;
+        font-weight: 400;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* ========================================
+       TYPOGRAPHY
+       ======================================== */
+    h1, h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+    }
+
+    h1 {
+        font-size: 80px;
+        margin-bottom: 32px;
+    }
+
+    h2 {
+        font-size: 42px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-family: "Inter", sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2.5px;
+        margin-bottom: 20px;
+        color: #5B7FDB;
+    }
+
+    h4 {
+        font-family: "Inter", sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #1a1a1a;
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .lead {
+        font-size: 22px;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #1a1a1a;
+        margin-bottom: 32px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    ul li {
+        font-size: 17px;
+        line-height: 1.7;
+        color: #333;
+        padding: 8px 0;
+        padding-left: 24px;
+        position: relative;
+    }
+
+    ul li:before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #5B7FDB;
+        font-weight: 600;
+    }
+
+    /* ========================================
+       LAYOUT
+       ======================================== */
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 80px;
+    }
+
+    .container-reading {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 80px;
+        text-align: left;
+    }
+
+    section {
+        padding: 140px 0;
+    }
+
+    .section-narrow {
+        padding: 100px 0;
+    }
+
+    /* ========================================
+       HERO
+       ======================================== */
+    .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: #000;
+        overflow: hidden;
+    }
+
+    .hero-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.85;
+    }
+
+    /* ========================================
+       PROJECT META
+       ======================================== */
+    .project-meta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 60px;
+        padding: 80px 0 60px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .meta-item {
+        text-align: left;
+    }
+
+    .meta-label {
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: #999;
+        margin-bottom: 12px;
+        font-weight: 600;
+    }
+
+    .meta-value {
+        font-size: 16px;
+        color: #1a1a1a;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    /* ========================================
+       CONTENT SECTIONS
+       ======================================== */
+    .content-section {
+        padding: 100px 0;
+    }
+
+    .content-section.alt {
+        background: #fafafa;
+    }
+
+    /* ========================================
+       PROBLEM STATEMENT GRID
+       ======================================== */
+    .problem-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        margin: 60px 0;
+    }
+
+    .problem-card {
+        background: linear-gradient(135deg, #7B9EF5 0%, #5B7FDB 100%);
+        padding: 40px;
+        border-radius: 2px;
+    }
+
+    .problem-card h4 {
+        color: white;
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .problem-card p {
+        color: white;
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 0;
+    }
+
+    .desired-outcomes {
+        background: #f5f7fa;
+        padding: 48px 40px;
+        border-radius: 2px;
+        margin-top: 40px;
+        border-left: 4px solid #5B7FDB;
+    }
+
+    .desired-outcomes h4 {
+        font-size: 20px;
+        margin-bottom: 24px;
+        color: #5B7FDB;
+    }
+
+    .desired-outcomes p {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .desired-outcomes p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ========================================
+       QUOTES
+       ======================================== */
+    .quote-block {
+        background: #f5f7fa;
+        padding: 48px 60px;
+        border-radius: 2px;
+        margin: 40px 0;
+        position: relative;
+    }
+
+    .quote-text {
+        font-size: 20px;
+        line-height: 1.6;
+        font-style: italic;
+        color: #1a1a1a;
+        margin-bottom: 12px;
+    }
+
+    .quote-source {
+        font-size: 14px;
+        color: #666;
+        font-style: italic;
+    }
+
+    /* ========================================
+       IMAGE BLOCKS
+       ======================================== */
+    .image-block {
+        margin: 60px 0;
+    }
+
+    .image-block img {
+        width: 100%;
+        border-radius: 2px;
+    }
+
+    /* ========================================
+       PERSONAS GRID
+       ======================================== */
+    .personas-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin: 60px 0;
+    }
+
+    .persona-card {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 2px;
+        padding: 32px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .persona-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .persona-header {
+        margin-bottom: 20px;
+    }
+
+    .persona-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #5B7FDB;
+        margin-bottom: 8px;
+    }
+
+    .persona-name {
+        font-size: 15px;
+        color: #666;
+        margin-bottom: 4px;
+    }
+
+    .persona-section {
+        margin-bottom: 16px;
+    }
+
+    .persona-section-title {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #999;
+        margin-bottom: 8px;
+    }
+
+    .persona-section ul {
+        margin-left: 0;
+    }
+
+    .persona-section li {
+        font-size: 14px;
+        padding: 4px 0;
+        padding-left: 20px;
+    }
+
+    .persona-section li:before {
+        font-size: 12px;
+    }
+
+    /* ========================================
+       RESPONSIVE
+       ======================================== */
+    @media (max-width: 1200px) {
+        .container,
+        .container-reading {
+            padding: 0 60px;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        h1 { font-size: 64px; }
+        h2 { font-size: 36px; }
+
+        .container,
+        .container-reading {
+            padding: 0 40px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .project-meta {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .problem-grid,
+        .personas-grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        h1 { font-size: 48px; }
+        h2 { font-size: 32px; }
+        p { font-size: 16px; }
+        .lead { font-size: 18px; }
+
+        .container,
+        .container-reading {
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .project-meta {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .quote-block {
+            padding: 32px 24px;
+        }
+
+        .quote-text {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 36px; }
+        h2 { font-size: 28px; }
+    }
+</style>
+</head>
+
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <img src="images/nearby/Mockup2.jpg" class="hero-image" alt="Nearby">
+        <h1>Ekko</h1>
+            <p class="hero-lead">An interactive storytelling app helping children practice speech sounds through play—designed for parents and children to use together.</p>
+    </section>
+
+    <!-- META -->
+    <div class="container">
+        <div class="project-meta">
+            <div class="meta-item">
+                <div class="meta-label">Role</div>
+                <div class="meta-value">UX/UI Designer<br>UX Researcher</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Timeline</div>
+                <div class="meta-value">3 months<br>Oct – Dec 2024</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tools</div>
+                <div class="meta-value">Figma, Adobe Photoshop, Adobe Illustrator</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OVERVIEW -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>Overview</h3>
+            <p class="lead">Nearby is a community-based app designed to help neighbors stay informed about electricity and water outages and connected during power cuts.</p>
+            <p>Beyond real-time power schedules, the app fosters local connections by allowing users to request or offer help—whether that's sharing a generator, providing a charged device, or offering a safe space.</p>
+        </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="content-section alt">
+        <div class="container-reading">
+            <h3>The Problem</h3>
+            <h2>The Challenge</h2>
+            <p>Many communities face frequent power disruptions. Official outage information is often delayed or not localized, leaving residents without reliable updates. During cuts, people feel disconnected and anxious, while also lacking safe, centralized ways to coordinate with neighbors. Existing channels (social media, local groups) are fragmented and carry risks.</p>
+        </div>
+
+        <div class="container">
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <h4>Problem 1</h4>
+                    <p>Residents don't receive timely, localized outage updates, leaving them in the dark longer than necessary. Outages also increase feelings of stress & anxiety.</p>
+                </div>
+                <div class="problem-card">
+                    <h4>Problem 2</h4>
+                    <p>During outages, people want to ask neighbors for help — or offer it themselves — but existing channels are unsafe, fragmented, or unreliable.</p>
+                </div>
+            </div>
+
+            <div class="desired-outcomes">
+                <h4>Desired Outcomes</h4>
+                <p><strong>See real-time power status:</strong> Users get accurate, localized outage updates to keep users informed and to reduce stress.</p>
+                <p><strong>Offer and request help:</strong> A safe, centralized platform enables neighbors to share resources and support one another during outages.</p>
+            </div>
+
+            <div class="quote-block">
+                <p class="quote-text">"Residents in lower-income communities often experience longer outages due to delayed updates and lack of localized information."</p>
+                <p class="quote-source">—AEI, Power Outages Leave Poor Communities in the Dark Longer</p>
+            </div>
+
+            <div class="quote-block">
+                <p class="quote-text">"Power outages can increase anxiety and depression, especially among vulnerable populations, highlighting the need for community support"</p>
+                <p class="quote-source">—TIME, Puerto Rico Hurricane Maria Power Outage</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- USER PERSONAS -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>User Research</h3>
+            <h2>User Personas</h2>
+            <p>With the problem clarified, I proceeded to create detailed user personas and outline the user flows for each to better understand user needs and behaviors.</p>
+        </div>
+
+        <div class="container">
+            <div class="personas-grid">
+                <!-- Persona 1 -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-title">Persona 1: The Working Parent</div>
+                        <div class="persona-name">Name: Aisha Khan</div>
+                        <div class="persona-name">Age: 38</div>
+                    </div>
+                    
+                    <div class="persona-section">
+                        <div class="persona-section-title">Frustrations</div>
+                        <ul>
+                            <li>Notices are sometimes confusing or buried in group chats</li>
+                            <li>Can't afford to miss updates while caring for kids</li>
+                            <li>Wants to check power status or report issues at odd hours without waking neighbors</li>
+                            <li>Hard to find childcare for quick errands during outages</li>
+                        </ul>
+                    </div>
+
+                    <div class="persona-section">
+                        <div class="persona-section-title">Goals</div>
+                        <ul>
+                            <li>Quickly check when her apartment will have power/water</li>
+                            <li>Receive timely notifications so she doesn't miss updates</li>
+                            <li>Coordinate with neighbors for her kids' needs</li>
+                            <li>Hit a notification toggle when power is back</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Persona 2 -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-title">Persona 2: The Retired Resident</div>
+                        <div class="persona-name">Name: Miguel Santiago</div>
+                        <div class="persona-name">Age: 72</div>
+                    </div>
+                    
+                    <div class="persona-section">
+                        <div class="persona-section-title">Frustrations</div>
+                        <ul>
+                            <li>Complicated apps or small text</li>
+                            <li>No one to turn to when schedules shift</li>
+                            <li>Worried about neighbors who live alone</li>
+                            <li>Gets anxious when he doesn't know what's happening</li>
+                        </ul>
+                    </div>
+
+                    <div class="persona-section">
+                        <div class="persona-section-title">Goals</div>
+                        <ul>
+                            <li>See straightforward outage schedules without confusion</li>
+                            <li>Check or post simple messages about groceries</li>
+                            <li>Knows who to call in case of building notices</li>
+                            <li>Be useful by helping neighbors with odd jobs</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Persona 3 -->
+                <div class="persona-card">
+                    <div class="persona-header">
+                        <div class="persona-title">Persona 3: The Young Professional</div>
+                        <div class="persona-name">Name: Samantha Lee</div>
+                        <div class="persona-name">Age: 27</div>
+                    </div>
+                    
+                    <div class="persona-section">
+                        <div class="persona-section-title">Frustrations</div>
+                        <ul>
+                            <li>Missed updates can ruin work calls</li>
+                            <li>Hates waking up to no Wi-Fi</li>
+                            <li>Feels isolated when stuck alone with no power/Wi-Fi</li>
+                        </ul>
+                    </div>
+
+                    <div class="persona-section">
+                        <div class="persona-section-title">Goals</div>
+                        <ul>
+                            <li>Plan work calls and projects around outage schedules</li>
+                            <li>Stay connected to local setting</li>
+                            <li>Share resources like Wi-Fi hotspots or cafes with power</li>
+                            <li>Wants to help neighbors when she can</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SITEMAP -->
+    <section class="content-section alt">
+        <div class="container-reading">
+            <h3>Information Architecture</h3>
+            <h2>Sitemap</h2>
+            <p>As part of the design process, I created a sitemap to map out the structure and user flow of Nearby. This helped visualize how users would navigate between screens and ensured that all core tasks—checking real-time outages, posting or responding to requests/offers, and accessing neighborhood resources—were easy to reach.</p>
+        </div>
+        <div class="container">
+            <div class="image-block">
+                <img src="images/nearby/sitemap.jpg" alt="Sitemap">
+            </div>
+        </div>
+    </section>
+
+    <!-- DESIGN SYSTEM -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>Visual Identity</h3>
+            <h2>Design System</h2>
+            <p>To ensure consistency and clarity across the app, I built a design system that reflects Nearby's purpose — reliability, community, and accessibility during uncertainty. The system focuses on simplicity and trust while maintaining a warm, human tone.</p>
+            <p>Every color, type choice, and icon was selected to make the app easy to navigate even in low-light or stressful conditions, such as during a power cut.</p>
+        </div>
+        <div class="container">
+            <div class="image-block">
+                <img src="images/nearby/designsys1.jpg" alt="Design System - Colors and Typography">
+            </div>
+            <div class="image-block">
+                <img src="images/nearby/designsys2.jpg" alt="Design System - Components">
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL PROTOTYPE -->
+    <section class="content-section alt">
+        <div class="container-reading">
+            <h3>Final Design</h3>
+            <h2>Final Prototype</h2>
+            <p>After finalizing the design system and refining the user flows, I focused on building a cohesive prototype that brought Nearby's purpose to life. The goal was to create an experience that felt reliable, human, and easy to navigate especially during stressful moments like a power outage.</p>
+            <p>Each screen was designed to emphasize clarity and action: real-time outage updates, quick request and offer options, and transparent communication between neighbors.</p>
+        </div>
+    </section>
+
+    <!-- IMPACT -->
+    <section class="content-section">
+        <div class="container-reading">
+            <h3>Reflection</h3>
+            <h2>Impact and Results</h2>
+            <p>Nearby demonstrates how thoughtful, community-centered design can strengthen connection and trust during moments of uncertainty. The app provides residents with real-time outage tracking and a simple way to request or offer help, reducing anxiety and encouraging collaboration when power disruptions occur.</p>
+            <p>In the future, I hope to extend the project by developing a backend system that connects directly with utility companies. This would allow outage data to be verified and shared automatically, enabling faster updates and better coordination between residents and service providers.</p>
+        </div>
+    </section>
+
+</body>
+</html>
