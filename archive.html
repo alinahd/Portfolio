@@ -347,6 +347,13 @@ body {
         width: 100%;
     }
 }
+
+.masonry-image video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 </style>
 </head>
 <body>
@@ -422,10 +429,12 @@ body {
         </div>
         
         <!-- Project 2 -->
-        <div class="masonry-item">
-                <div class="masonry-image">
-                    <img src="images/archive/slowcig.mov" alt="Nearby community app">
-                </div>
+        <div class="masonry-image">
+            <video autoplay muted loop playsinline>
+                <source src="images/archive/slowcig.mp4" type="video/mp4">
+            </video>
+        </div>
+        
                 <div class="masonry-info">
                     <div class="masonry-meta">
                         <span class="masonry-title">Remnants</span>
@@ -437,10 +446,11 @@ body {
         </div>
         
         <!-- Project 3 -->
-        <div class="masonry-item">
-                <div class="masonry-image">
-                    <img src="images/archive/solidcore.mp4" alt="Eco Taschen">
-                </div>
+        <div class="masonry-image">
+            <video autoplay muted loop playsinline>
+                <source src="images/archive/solidcore.mp4" type="video/mp4">
+            </video>
+        </div>
                 <div class="masonry-info">
                     <div class="masonry-meta">
                         <span class="masonry-title">Solidcore</span>
