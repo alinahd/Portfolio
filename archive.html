@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — Alinah Danish</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    padding: 0;
+    margin: 0;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* Header Navigation */
+.header-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 48px 32px 32px 32px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 64px;
+    align-items: start;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.brand h1 {
+    font-size: 17px;
+    font-weight: 500;
+    color: #0a0a0a;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+.brand h1 a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-group {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-group a {
+    font-size: 14px;
+    font-weight: 450;
+    color: #0a0a0a;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    letter-spacing: -0.006em;
+}
+
+.nav-group a:hover {
+    color: #666666;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2px;
+    background-color: #0a0a0a;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background-color: #ffffff;
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 80px 32px 32px 32px;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.mobile-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-nav-section a {
+    font-size: 16px;
+    font-weight: 450;
+    color: #0a0a0a;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.006em;
+}
+
+.mobile-nav-section a:hover {
+    color: #666666;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-overlay.active {
+    opacity: 1;
+}
+
+/* Archive Header */
+.archive-header {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 64px 32px 48px 32px;
+}
+
+.archive-header h2 {
+    font-size: 42px;
+    font-weight: 350;
+    color: #0a0a0a;
+    line-height: 1.3;
+    letter-spacing: -0.026em;
+    margin-bottom: 16px;
+}
+
+.archive-header p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.6;
+    letter-spacing: -0.008em;
+    max-width: 600px;
+}
+
+/* Masonry Grid */
+.archive-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 32px 96px 32px;
+}
+
+.masonry-grid {
+    column-count: 3;
+    column-gap: 24px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+    margin-bottom: 24px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+}
+
+.masonry-item a {
+    text-decoration: none;
+    display: block;
+}
+
+.masonry-image {
+    width: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+    background: #f7f7f7;
+    position: relative;
+}
+
+.masonry-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.masonry-item:hover .masonry-image img {
+    transform: scale(1.03);
+}
+
+.masonry-info {
+    padding: 16px 0;
+}
+
+.masonry-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.masonry-title {
+    font-size: 16px;
+    color: #0a0a0a;
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    line-height: 1.3;
+}
+
+.masonry-year {
+    font-size: 12px;
+    color: #999999;
+    font-weight: 400;
+    letter-spacing: -0.003em;
+    font-variant-numeric: tabular-nums;
+}
+
+.masonry-role {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 400;
+    letter-spacing: -0.003em;
+    line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .header-section {
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        padding: 40px 24px 24px 24px;
+    }
+    
+    .nav-group {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .mobile-menu {
+        display: block;
+    }
+    
+    .menu-overlay {
+        display: block;
+    }
+    
+    .archive-header {
+        padding: 56px 24px 40px 24px;
+    }
+    
+    .archive-header h2 {
+        font-size: 36px;
+    }
+    
+    .archive-section {
+        padding: 0 24px 72px 24px;
+    }
+    
+    .masonry-grid {
+        column-count: 2;
+        column-gap: 20px;
+    }
+    
+    .masonry-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .header-section {
+        padding: 32px 20px 20px 20px;
+    }
+    
+    .archive-header {
+        padding: 48px 20px 32px 20px;
+    }
+    
+    .archive-header h2 {
+        font-size: 32px;
+    }
+    
+    .archive-header p {
+        font-size: 15px;
+    }
+    
+    .archive-section {
+        padding: 0 20px 64px 20px;
+    }
+    
+    .masonry-grid {
+        column-count: 1;
+    }
+    
+    .mobile-menu {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- Menu Overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- Navigation Header -->
+<div class="header-section">
+    <div class="brand">
+        <h1><a href="homepage.html">Alinah Danish</a></h1>
+    </div>
+    
+    <div class="nav-group">
+        <a href="homepage.html">Work</a>
+        <a href="archive.html">Archive</a>
+        <a href="about.html">About</a>
+        <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+    </div>
+    
+    <div class="nav-group">
+        <a href="mailto:alinahdanish13@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+    </div>
+    
+    <!-- Hamburger Icon -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <div class="mobile-nav-section">
+            <a href="index.html">Work</a>
+            <a href="archive.html">Archive</a>
+            <a href="about.html">About</a>
+            <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+        </div>
+        <div class="mobile-nav-section">
+            <a href="mailto:alinahdanish13@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</div>
+
+<!-- Archive Header -->
+<div class="archive-header">
+    <h2>Archive</h2>
+    <p>A collection of my work spanning UX/UI design, 3D visualization, and experimental projects.</p>
+</div>
+
+<!-- Archive Masonry Grid -->
+<div class="archive-section">
+    <div class="masonry-grid">
+        
+        <!-- Project 1 -->
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/i am woman1.jpg" alt="Ekko language learning app">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">I AM WOMAN</span>
+                        <span class="masonry-year">2024</span>
+                    </div>
+                    <div class="masonry-role">Graphic Design · Print</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/slowcig.mov" alt="Nearby community app">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">Remnants</span>
+                        <span class="masonry-year">2025</span>
+                    </div>
+                    <div class="masonry-role">3D Animation (Blender) · Motion Design</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/solidcore.mp4" alt="Eco Taschen">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">Solidcore</span>
+                        <span class="masonry-year">2025</span>
+                    </div>
+                    <div class="masonry-role">2D Animation (After Effects) · Motion Design </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/AlinahDanish_Final_Spread.jpg" alt="Meaning Made Visible">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">The Forgotten Ten on the M14 Bus</span>
+                        <span class="masonry-year">2025</span>
+                    </div>
+                    <div class="masonry-role">Editorial Design · Print</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/highheel.png"alt="Project name">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">Christmas High Heel</span>
+                        <span class="masonry-year">2025</span>
+                    </div>
+                    <div class="masonry-role">CAD Design · Product Exploration</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/ouat.png" alt="Project name">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">Once Upon a Time</span>
+                        <span class="masonry-year">2024</span>
+                    </div>
+                    <div class="masonry-role">Book Design · Print</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="masonry-item">
+                <div class="masonry-image">
+                    <img src="images/archive/j.jpg" alt="Project name">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">RACKD</span>
+                        <span class="masonry-year">2024</span>
+                    </div>
+                    <div class="masonry-role">UX/UI Design · Interaction Design</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="masonry-item">
+            <div class="masonry-image">
+                <img src="images/archive/forgotten.png" alt="Project name">
+            </div>
+            <div class="masonry-info">
+                <div class="masonry-meta">
+                    <span class="masonry-title">Current Obsessions</span>
+                    <span class="masonry-year">2025</span>
+                </div>
+                <div class="masonry-role">Editorial Design · Print</div>
+            </div>
+        </a>
+    </div>
+
+    <div class="masonry-item">
+        <div class="masonry-image">
+            <img src="images/archive/instapost3.jpg" alt="Project name">
+        </div>
+        <div class="masonry-info">
+            <div class="masonry-meta">
+                <span class="masonry-title">Disconnect to Reconnect</span>
+                <span class="masonry-year">2023</span>
+            </div>
+            <div class="masonry-role">Graphic Design · Print & Digital</div>
+        </div>
+    </a>
+</div>
+       
+        
+        <!-- Add more projects below - duplicate this structure -->
+        <!-- 
+        <div class="masonry-item">
+            <a href="project-link.html">
+                <div class="masonry-image">
+                    <img src="images/project-image.jpg" alt="Project name">
+                </div>
+                <div class="masonry-info">
+                    <div class="masonry-meta">
+                        <span class="masonry-title">Project Name</span>
+                        <span class="masonry-year">2024</span>
+                    </div>
+                    <div class="masonry-role">Role · Discipline</div>
+                </div>
+            </a>
+        </div>
+        -->
+        
+    </div>
+</div>
+
+<script>
+// Hamburger menu functionality
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    if (mobileMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
+}
+
+hamburger.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+
+// Close menu when clicking on a link
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+});
+</script>
+
+</body>
+</html>
