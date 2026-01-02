@@ -1,1361 +1,1272 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ekko — Alinah Danish</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Tiempos+Headline:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekko — Alinah Danish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Tiempos+Headline:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
-    /* ========================================
+/* ========================================
        RESET
        ======================================== */
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
     }
-
-    html {
-        scroll-behavior: smooth;
+html {
+scroll-behavior: smooth;
     }
-
-    body {
-        font-family: "Inter", sans-serif;
-        font-size: 16px;
-        line-height: 1.65;
-        color: #1a1a1a;
-        background: #ffffff;
-        font-weight: 400;
+body {
+font-family: "Inter", sans-serif;
+font-size: 16px;
+line-height: 1.65;
+color: #1a1a1a;
+background: #ffffff;
+font-weight: 400;
     }
-
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
+img {
+max-width: 100%;
+height: auto;
+display: block;
     }
-
-    /* ========================================
+/* ========================================
        NAVIGATION HEADER
        ======================================== */
-    .header-section {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 48px 32px 32px 32px;
-        display: grid;
-        grid-template-columns: 1fr auto auto;
-        gap: 64px;
-        align-items: start;
-        border-bottom: 1px solid #e8e8e8;
-        position: relative;
-        background: #ffffff;
+.header-section {
+max-width: 1400px;
+margin: 0 auto;
+padding: 48px 32px 32px 32px;
+display: grid;
+grid-template-columns: 1fr auto auto;
+gap: 64px;
+align-items: start;
+border-bottom: 1px solid #e8e8e8;
+position: relative;
+background: #ffffff;
     }
-
-    .brand {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
+.brand {
+display: flex;
+flex-direction: column;
+gap: 4px;
     }
-
-    .brand h1 {
-        font-size: 17px;
-        font-weight: 500;
-        color: #0a0a0a;
-        letter-spacing: -0.015em;
-        line-height: 1.2;
-        margin-bottom: 0;
+.brand h1 {
+font-size: 17px;
+font-weight: 500;
+color: #0a0a0a;
+letter-spacing: -0.015em;
+line-height: 1.2;
+margin-bottom: 0;
     }
-
-    .brand h1 a {
-        color: inherit;
-        text-decoration: none;
+.brand h1 a {
+color: inherit;
+text-decoration: none;
     }
-
-    .nav-group {
-        display: flex;
-        gap: 28px;
-        align-items: center;
+.nav-group {
+display: flex;
+gap: 28px;
+align-items: center;
     }
-
-    .nav-group a {
-        font-size: 14px;
-        font-weight: 450;
-        color: #0a0a0a;
-        text-decoration: none;
-        transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        white-space: nowrap;
-        letter-spacing: -0.006em;
+.nav-group a {
+font-size: 14px;
+font-weight: 450;
+color: #0a0a0a;
+text-decoration: none;
+transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+white-space: nowrap;
+letter-spacing: -0.006em;
     }
-
-    .nav-group a:hover {
-        color: #666666;
+.nav-group a:hover {
+color: #666666;
     }
-
-    /* Hamburger Menu */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        gap: 5px;
-        cursor: pointer;
-        padding: 8px;
-        background: none;
-        border: none;
-        z-index: 1001;
+/* Hamburger Menu */
+.hamburger {
+display: none;
+flex-direction: column;
+gap: 5px;
+cursor: pointer;
+padding: 8px;
+background: none;
+border: none;
+z-index: 1001;
     }
-
-    .hamburger span {
-        width: 24px;
-        height: 2px;
-        background-color: #0a0a0a;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        border-radius: 2px;
+.hamburger span {
+width: 24px;
+height: 2px;
+background-color: #0a0a0a;
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+border-radius: 2px;
     }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px);
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translate(6px, 6px);
     }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
+.hamburger.active span:nth-child(2) {
+opacity: 0;
     }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px);
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(6px, -6px);
     }
-
-    /* Mobile Menu */
-    .mobile-menu {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
-        background-color: #ffffff;
-        box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
-        padding: 80px 32px 32px 32px;
+/* Mobile Menu */
+.mobile-menu {
+display: none;
+position: fixed;
+top: 0;
+right: -100%;
+width: 280px;
+height: 100vh;
+background-color: #ffffff;
+box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+z-index: 1000;
+padding: 80px 32px 32px 32px;
     }
-
-    .mobile-menu.active {
-        right: 0;
+.mobile-menu.active {
+right: 0;
     }
-
-    .mobile-menu-content {
-        display: flex;
-        flex-direction: column;
-        gap: 32px;
+.mobile-menu-content {
+display: flex;
+flex-direction: column;
+gap: 32px;
     }
-
-    .mobile-nav-section {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
+.mobile-nav-section {
+display: flex;
+flex-direction: column;
+gap: 20px;
     }
-
-    .mobile-nav-section a {
-        font-size: 16px;
-        font-weight: 450;
-        color: #0a0a0a;
-        text-decoration: none;
-        transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: -0.006em;
+.mobile-nav-section a {
+font-size: 16px;
+font-weight: 450;
+color: #0a0a0a;
+text-decoration: none;
+transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+letter-spacing: -0.006em;
     }
-
-    .mobile-nav-section a:hover {
-        color: #666666;
+.mobile-nav-section a:hover {
+color: #666666;
     }
-
-    .menu-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.3);
-        z-index: 999;
-        opacity: 0;
-        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.menu-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.3);
+z-index: 999;
+opacity: 0;
+transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-
-    .menu-overlay.active {
-        opacity: 1;
+.menu-overlay.active {
+opacity: 1;
     }
-
-    /* ========================================
+/* ========================================
        TYPOGRAPHY
        ======================================== */
-    h2 {
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-        font-size: 42px;
-        margin-bottom: 24px;
+h2 {
+font-family: "Inter", sans-serif;
+font-weight: 600;
+line-height: 1.15;
+letter-spacing: -0.02em;
+font-size: 42px;
+margin-bottom: 24px;
     }
-
-    h3 {
-        font-family: "Inter", sans-serif;
-        font-size: 11px;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        margin-bottom: 20px;
-        color: #E87BC8;
+h3 {
+font-family: "Inter", sans-serif;
+font-size: 11px;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 2.5px;
+margin-bottom: 20px;
+color: #E87BC8;
     }
-
-    h4 {
-        font-family: "Inter", sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        margin-bottom: 12px;
-        color: #1a1a1a;
+h4 {
+font-family: "Inter", sans-serif;
+font-size: 18px;
+font-weight: 600;
+margin-bottom: 12px;
+color: #1a1a1a;
     }
-
-    p {
-        font-size: 17px;
-        line-height: 1.7;
-        margin-bottom: 20px;
-        font-weight: 400;
-        color: #333;
+p {
+font-size: 17px;
+line-height: 1.7;
+margin-bottom: 20px;
+font-weight: 400;
+color: #333;
     }
-
-    .lead {
-        font-size: 22px;
-        line-height: 1.6;
-        font-weight: 400;
-        color: #1a1a1a;
-        margin-bottom: 32px;
+.lead {
+font-size: 22px;
+line-height: 1.6;
+font-weight: 400;
+color: #1a1a1a;
+margin-bottom: 32px;
     }
-
-    .caption {
-        font-size: 14px;
-        color: #666;
-        font-style: italic;
-        margin-top: 16px;
-        font-weight: 400;
+.caption {
+font-size: 14px;
+color: #666;
+font-style: italic;
+margin-top: 16px;
+font-weight: 400;
     }
-
-    /* ========================================
+/* ========================================
        LAYOUT
        ======================================== */
-    .container {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 80px;
+.container {
+max-width: 1400px;
+margin: 0 auto;
+padding: 0 80px;
     }
-
-    .container-reading {
-        max-width: 720px;
-        margin: 0 auto;
-        padding: 0 80px;
-        text-align: left;
+.container-reading {
+max-width: 720px;
+margin: 0 auto;
+padding: 0 80px;
+text-align: left;
     }
-
-    .container-reading h3,
-    .container-reading h2,
-    .container-reading p {
-        text-align: left;
+.container-reading h3,
+.container-reading h2,
+.container-reading p {
+text-align: left;
     }
-
-    section {
-        padding: 140px 0;
+section {
+padding: 140px 0;
     }
-
-    .section-narrow {
-        padding: 100px 0;
+.section-narrow {
+padding: 100px 0;
     }
-
-    /* ========================================
+/* ========================================
        HERO
        ======================================== */
-    .hero {
-        position: relative;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        background: #000;
-        overflow: hidden;
+.hero {
+position: relative;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+background: #000;
+overflow: hidden;
     }
-
-    .hero-image {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.85;
+.hero-image {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+opacity: 0.85;
     }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        color: white;
-        max-width: 900px;
-        padding: 0 80px;
+.hero-content {
+position: relative;
+z-index: 2;
+text-align: center;
+color: white;
+max-width: 900px;
+padding: 0 80px;
     }
-
-    .hero h1 {
-        color: white;
-        font-size: 96px;
-        margin-bottom: 24px;
-        font-family: "Inter", sans-serif;
-        font-weight: 600;
-        line-height: 1.15;
-        letter-spacing: -0.02em;
+.hero h1 {
+color: white;
+font-size: 96px;
+margin-bottom: 24px;
+font-family: "Inter", sans-serif;
+font-weight: 600;
+line-height: 1.15;
+letter-spacing: -0.02em;
     }
-
-    .hero-lead {
-        font-size: 22px;
-        font-weight: 400;
-        color: white;
-        opacity: 0.95;
-        line-height: 1.6;
-        max-width: 640px;
-        margin: 0 auto;
+.hero-lead {
+font-size: 22px;
+font-weight: 400;
+color: white;
+opacity: 0.95;
+line-height: 1.6;
+max-width: 640px;
+margin: 0 auto;
     }
-
-    /* ========================================
+/* ========================================
        PROJECT META
        ======================================== */
-    .project-meta {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 60px;
-        padding: 80px 0 60px;
-        border-bottom: 1px solid #e0e0e0;
+.project-meta {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 60px;
+padding: 80px 0 60px;
+border-bottom: 1px solid #e0e0e0;
     }
-
-    .meta-item {
-        text-align: left;
+.meta-item {
+text-align: left;
     }
-
-    .meta-label {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        color: #999;
-        margin-bottom: 12px;
-        font-weight: 600;
+.meta-label {
+font-size: 11px;
+text-transform: uppercase;
+letter-spacing: 2px;
+color: #999;
+margin-bottom: 12px;
+font-weight: 600;
     }
-
-    .meta-value {
-        font-size: 16px;
-        color: #1a1a1a;
-        font-weight: 400;
-        line-height: 1.6;
+.meta-value {
+font-size: 16px;
+color: #1a1a1a;
+font-weight: 400;
+line-height: 1.6;
     }
-
-    /* ========================================
+/* ========================================
        INTRO
        ======================================== */
-    .intro {
-        padding: 120px 0;
+.intro {
+padding: 120px 0;
     }
-
-    .intro .lead {
-        text-align: left;
+.intro .lead {
+text-align: left;
     }
-
-    /* ========================================
+/* ========================================
        CHALLENGE SECTION
        ======================================== */
-    .challenge-section {
-        padding: 100px 0;
-        background: #fafafa;
+.challenge-section {
+padding: 100px 0;
+background: #fafafa;
     }
-
-    .two-col-layout {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 100px;
-        margin-top: 60px;
+.two-col-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 100px;
+margin-top: 60px;
     }
-
-    .hmw-callout {
-        background: linear-gradient(135deg, #FEBBEE 0%, #E87BC8 100%);
-        padding: 40px;
-        border-radius: 2px;
-        margin-top: 32px;
+.hmw-callout {
+background: linear-gradient(135deg, #FEBBEE 0%, #E87BC8 100%);
+padding: 40px;
+border-radius: 2px;
+margin-top: 32px;
     }
-
-    .hmw-callout p {
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.6;
-        color: #1a1a1a;
-        margin: 0;
+.hmw-callout p {
+font-size: 20px;
+font-weight: 500;
+line-height: 1.6;
+color: #1a1a1a;
+margin: 0;
     }
-
-    .hmw-prefix {
-        font-weight: 400;
-        display: block;
-        margin-bottom: 8px;
+.hmw-prefix {
+font-weight: 400;
+display: block;
+margin-bottom: 8px;
     }
-
-    /* ========================================
+/* ========================================
        FULL BLEED IMAGES
        ======================================== */
-    .full-bleed {
-        margin: 120px 0;
+.full-bleed {
+margin: 120px 0;
     }
-
-    .full-bleed img {
-        width: 100%;
+.full-bleed img {
+width: 100%;
     }
-
-    /* ========================================
+/* ========================================
        IMAGE WITH CAPTION
        ======================================== */
-    .image-section {
-        padding: 100px 0;
+.image-section {
+padding: 100px 0;
     }
-
-    .image-block {
-        margin: 60px 0;
+.image-block {
+margin: 60px 0;
     }
-
-    .image-block img {
-        width: 100%;
-        border-radius: 2px;
+.image-block img {
+width: 100%;
+border-radius: 2px;
     }
-
-    /* ========================================
+/* ========================================
        GRID LAYOUTS
        ======================================== */
-    .grid-2 {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin: 60px 0;
+.grid-2 {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+margin: 60px 0;
     }
-
-    .grid-2 img {
-        width: 100%;
-        border-radius: 2px;
-        cursor: pointer;
-        transition: opacity 0.3s ease;
+.grid-2 img {
+width: 100%;
+border-radius: 2px;
+cursor: pointer;
+transition: opacity 0.3s ease;
     }
-
-    .grid-2 img:hover {
-        opacity: 0.9;
+.grid-2 img:hover {
+opacity: 0.9;
     }
-
-    .grid-3 {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 32px;
-        margin: 60px 0;
+.grid-3 {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 32px;
+margin: 60px 0;
     }
-
-    .grid-3 img {
-        width: 100%;
-        border-radius: 2px;
+.grid-3 img {
+width: 100%;
+border-radius: 2px;
     }
-
-    /* ========================================
+/* ========================================
        PARTICIPANTS
        ======================================== */
-    .participants-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 60px 40px;
-        margin: 80px 0;
+.participants-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 60px 40px;
+margin: 80px 0;
     }
-
-    .participant {
-        text-align: center;
+.participant {
+text-align: center;
     }
-
-    .participant-avatar {
-        width: 120px;
-        height: 120px;
-        background: linear-gradient(135deg, #FEBBEE 0%, #DA6BBF 100%);
-        border-radius: 50%;
-        margin: 0 auto 20px;
+.participant-avatar {
+width: 120px;
+height: 120px;
+background: linear-gradient(135deg, #FEBBEE 0%, #DA6BBF 100%);
+border-radius: 50%;
+margin: 0 auto 20px;
     }
-
-    .participant strong {
-        display: block;
-        font-size: 15px;
-        font-weight: 600;
-        color: #1a1a1a;
-        margin-bottom: 4px;
+.participant strong {
+display: block;
+font-size: 15px;
+font-weight: 600;
+color: #1a1a1a;
+margin-bottom: 4px;
     }
-
-    .participant p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.6;
-        margin: 0;
+.participant p {
+font-size: 14px;
+color: #666;
+line-height: 1.6;
+margin: 0;
     }
-
-    /* ========================================
+/* ========================================
        STATS
        ======================================== */
-    .stats-section {
-        padding: 100px 0;
+.stats-section {
+padding: 100px 0;
     }
-
-    .stat-block {
-        display: flex;
-        align-items: center;
-        gap: 80px;
-        padding: 60px 0;
-        border-bottom: 1px solid #e0e0e0;
+.stat-block {
+display: flex;
+align-items: center;
+gap: 80px;
+padding: 60px 0;
+border-bottom: 1px solid #e0e0e0;
     }
-
-    .stat-block:last-child {
-        border-bottom: none;
+.stat-block:last-child {
+border-bottom: none;
     }
-
-    .stat-number {
-        font-size: 96px;
-        font-weight: 700;
-        font-family: "Inter", sans-serif;
-        background: linear-gradient(135deg, #FEBBEE 0%, #E27BC9 50%, #CD2FA6 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1;
-        min-width: 240px;
-        flex-shrink: 0;
+.stat-number {
+font-size: 96px;
+font-weight: 700;
+font-family: "Inter", sans-serif;
+background: linear-gradient(135deg, #FEBBEE 0%, #E27BC9 50%, #CD2FA6 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+line-height: 1;
+min-width: 240px;
+flex-shrink: 0;
     }
-
-
-    /* ========================================
+/* ========================================
        INSIGHTS CARDS
        ======================================== */
-    .insights-section {
-        padding: 100px 0;
-        background: #fafafa;
+.insights-section {
+padding: 100px 0;
+background: #fafafa;
     }
-
-    .insights-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        margin-top: 60px;
+.insights-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+margin-top: 60px;
     }
-
-    .insight-card {
-        background: linear-gradient(135deg, #FEBBEE 0%, #E87BC8 100%);
-        padding: 40px 36px;
-        border-radius: 2px;
-        transition: transform 0.2s ease;
+.insight-card {
+background: linear-gradient(135deg, #FEBBEE 0%, #E87BC8 100%);
+padding: 40px 36px;
+border-radius: 2px;
+transition: transform 0.2s ease;
     }
-
-    .insight-card:hover {
-        transform: translateY(-4px);
+.insight-card:hover {
+transform: translateY(-4px);
     }
-
-    .insight-card h4 {
-        font-size: 19px;
-        margin-bottom: 16px;
+.insight-card h4 {
+font-size: 19px;
+margin-bottom: 16px;
     }
-
-    .insight-card p {
-        font-size: 15px;
-        line-height: 1.6;
-        color: #1a1a1a;
-        margin-bottom: 12px;
+.insight-card p {
+font-size: 15px;
+line-height: 1.6;
+color: #1a1a1a;
+margin-bottom: 12px;
     }
-
-    .insight-card p:last-child {
-        margin-bottom: 0;
+.insight-card p:last-child {
+margin-bottom: 0;
     }
-
-    .design-implication {
-        font-weight: 600;
-        text-decoration: underline;
-        text-decoration-thickness: 2px;
+.design-implication {
+font-weight: 600;
+text-decoration: underline;
+text-decoration-thickness: 2px;
     }
-
-    /* ========================================
+/* ========================================
        GOALS & METHOD
        ======================================== */
-    .goals-method {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        margin: 60px 0;
+.goals-method {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 40px;
+margin: 60px 0;
     }
-
-    .method-card {
-        background: #fafafa;
-        padding: 48px 40px;
-        border-radius: 2px;
-        border-left: 4px solid #E87BC8;
+.method-card {
+background: #fafafa;
+padding: 48px 40px;
+border-radius: 2px;
+border-left: 4px solid #E87BC8;
     }
-
-    .method-card h4 {
-        font-size: 20px;
-        margin-bottom: 32px;
+.method-card h4 {
+font-size: 20px;
+margin-bottom: 32px;
     }
-
-    .method-card ul {
-        list-style: none;
-        padding: 0;
+.method-card ul {
+list-style: none;
+padding: 0;
     }
-
-    .method-card li {
-        padding: 16px 0;
-        border-bottom: 1px solid #e0e0e0;
-        font-size: 15px;
-        line-height: 1.6;
-        color: #333;
+.method-card li {
+padding: 16px 0;
+border-bottom: 1px solid #e0e0e0;
+font-size: 15px;
+line-height: 1.6;
+color: #333;
     }
-
-    .method-card li:last-child {
-        border-bottom: none;
+.method-card li:last-child {
+border-bottom: none;
     }
-
-    /* ========================================
+/* ========================================
        FEATURE CARDS
        ======================================== */
-    .feature-cards-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 24px;
-        margin: 60px 0;
+.feature-cards-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 24px;
+margin: 60px 0;
     }
-
-    .feature-cards-grid img {
-        width: 100%;
-        border-radius: 2px;
-        transition: transform 0.2s ease;
+.feature-cards-grid img {
+width: 100%;
+border-radius: 2px;
+transition: transform 0.2s ease;
     }
-
-    .feature-cards-grid img:hover {
-        transform: translateY(-4px);
+.feature-cards-grid img:hover {
+transform: translateY(-4px);
     }
-
-    /* ========================================
+/* ========================================
        MODAL
        ======================================== */
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.95);
-        align-items: center;
-        justify-content: center;
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.95);
+align-items: center;
+justify-content: center;
     }
-
-    .modal.active {
-        display: flex;
+.modal.active {
+display: flex;
     }
-
-    .modal-content {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-        animation: zoom 0.3s;
+.modal-content {
+max-width: 90%;
+max-height: 90%;
+object-fit: contain;
+animation: zoom 0.3s;
     }
-
-    @keyframes zoom {
+@keyframes zoom {
         from { transform: scale(0.9); opacity: 0; }
         to { transform: scale(1); opacity: 1; }
     }
-
-    .modal-close {
-        position: absolute;
-        top: 30px;
-        right: 50px;
-        color: white;
-        font-size: 40px;
-        font-weight: 300;
-        cursor: pointer;
-        z-index: 1001;
-        transition: opacity 0.2s;
+.modal-close {
+position: absolute;
+top: 30px;
+right: 50px;
+color: white;
+font-size: 40px;
+font-weight: 300;
+cursor: pointer;
+z-index: 1001;
+transition: opacity 0.2s;
     }
-
-    .modal-close:hover {
-        opacity: 0.7;
+.modal-close:hover {
+opacity: 0.7;
     }
-
-    .expand-icon {
-        position: absolute;
-        bottom: 15px;
-        right: 15px;
-        width: 36px;
-        height: 36px;
-        background-color: rgba(0, 0, 0, 0.5);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        cursor: pointer;
-        z-index: 10;
+.expand-icon {
+position: absolute;
+bottom: 15px;
+right: 15px;
+width: 36px;
+height: 36px;
+background-color: rgba(0, 0, 0, 0.5);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+opacity: 0;
+transition: opacity 0.3s ease;
+cursor: pointer;
+z-index: 10;
     }
-
-    .persona-item {
-        position: relative;
-        cursor: pointer;
+.persona-item {
+position: relative;
+cursor: pointer;
     }
-
-    .persona-item:hover .expand-icon {
-        opacity: 1;
+.persona-item:hover .expand-icon {
+opacity: 1;
     }
-
-    .expand-icon svg {
-        width: 16px;
-        height: 16px;
-        stroke: white;
-        fill: none;
-        stroke-width: 2;
+.expand-icon svg {
+width: 16px;
+height: 16px;
+stroke: white;
+fill: none;
+stroke-width: 2;
     }
+/* ========================================
+       PROTOTYPE SCREENS GRID
+       ======================================== */
+.prototype-screens-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 40px;
+margin: 80px 0 0 0;
+    }
+.prototype-screen-item {
+text-align: center;
+    }
+.prototype-screen-item img {
+width: 100%;
+border-radius: 8px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+margin-bottom: 20px;
+    }
+.screen-caption {
+font-size: 15px;
+color: #666;
+line-height: 1.6;
+margin: 0;
+    }
+/* ========================================
+       PROTOTYPE LAYOUT
+       ======================================== */
+.prototype-layout {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+margin-top: 60px;
+align-items: start;
+    }
+.prototype-video {
+position: sticky;
+top: 40px;
+    }
+.prototype-video video {
+width: 100%;
+border-radius: 8px;
 
-    /* ========================================
+    }
+.prototype-images {
+display: flex;
+flex-direction: column;
+gap: 40px;
+    }
+.prototype-images img {
+width: 100%;
+border-radius: 8px;
+
+    }
+/* ========================================
        RESPONSIVE
        ======================================== */
-    @media (max-width: 1200px) {
-        .container,
-        .container-reading {
-            padding: 0 60px;
+@media (max-width: 1200px) {
+.container,
+.container-reading {
+padding: 0 60px;
         }
-
-        .hero-content {
-            padding: 0 60px;
+.hero-content {
+padding: 0 60px;
         }
-
-        .header-section {
-            padding: 40px 60px 32px 60px;
+.header-section {
+padding: 40px 60px 32px 60px;
         }
     }
-
-    @media (max-width: 1024px) {
-        h2 { font-size: 36px; }
-        .hero h1 { font-size: 72px; }
-        .lead { font-size: 20px; }
-
-        .container,
-        .container-reading {
-            padding: 0 40px;
+@media (max-width: 1024px) {
+h2 { font-size: 36px; }
+.hero h1 { font-size: 72px; }
+.lead { font-size: 20px; }
+.container,
+.container-reading {
+padding: 0 40px;
+        }
+.hero-content {
+padding: 0 40px;
+        }
+.header-section {
+grid-template-columns: 1fr auto;
+gap: 28px;
+padding: 40px 40px 32px 40px;
+        }
+.nav-group {
+display: none;
+        }
+.hamburger {
+display: flex;
+        }
+.mobile-menu {
+display: block;
+        }
+.menu-overlay {
+display: block;
+        }
+section {
+padding: 100px 0;
+        }
+.two-col-layout,
+.grid-2,
+.goals-method {
+grid-template-columns: 1fr;
+gap: 60px;
+        }
+.project-meta {
+grid-template-columns: repeat(2, 1fr);
+gap: 40px;
+        }
+.participants-grid,
+.insights-grid,
+.grid-3,
+.feature-cards-grid,
+.prototype-screens-grid {
+grid-template-columns: 1fr;
+gap: 32px;
         }
 
-        .hero-content {
-            padding: 0 40px;
+.prototype-layout {
+grid-template-columns: 1fr;
+gap: 40px;
         }
 
-        .header-section {
-            grid-template-columns: 1fr auto;
-            gap: 28px;
-            padding: 40px 40px 32px 40px;
+.prototype-video {
+position: relative;
+top: 0;
         }
-        
-        .nav-group {
-            display: none;
+.stat-block {
+flex-direction: column;
+align-items: flex-start;
+gap: 32px;
         }
-        
-        .hamburger {
-            display: flex;
-        }
-        
-        .mobile-menu {
-            display: block;
-        }
-        
-        .menu-overlay {
-            display: block;
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .two-col-layout,
-        .grid-2,
-        .goals-method {
-            grid-template-columns: 1fr;
-            gap: 60px;
-        }
-
-        .project-meta {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-        }
-
-        .participants-grid,
-        .insights-grid,
-        .grid-3,
-        .feature-cards-grid {
-            grid-template-columns: 1fr;
-            gap: 32px;
-        }
-
-        .stat-block {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 32px;
-        }
-
-        .stat-number {
-            font-size: 72px;
-            min-width: auto;
+.stat-number {
+font-size: 72px;
+min-width: auto;
         }
     }
-
-    @media (max-width: 768px) {
-        h2 { font-size: 32px; }
-        .hero h1 { font-size: 52px; }
-        .hero-lead { font-size: 18px; }
-        .lead { font-size: 18px; }
-        p { font-size: 16px; }
-
-        body { font-size: 15px; }
-
-        .container,
-        .container-reading {
-            padding: 0 24px;
+@media (max-width: 768px) {
+h2 { font-size: 32px; }
+.hero h1 { font-size: 52px; }
+.hero-lead { font-size: 18px; }
+.lead { font-size: 18px; }
+p { font-size: 16px; }
+body { font-size: 15px; }
+.container,
+.container-reading {
+padding: 0 24px;
         }
-
-        .hero-content {
-            padding: 0 24px;
+.hero-content {
+padding: 0 24px;
         }
-
-        .header-section {
-            padding: 32px 24px 24px 24px;
+.header-section {
+padding: 32px 24px 24px 24px;
         }
-
-        section {
-            padding: 80px 0;
+section {
+padding: 80px 0;
         }
-
-        .project-meta {
-            grid-template-columns: 1fr;
-            gap: 32px;
+.project-meta {
+grid-template-columns: 1fr;
+gap: 32px;
         }
-
-        .stat-number {
-            font-size: 56px;
+.stat-number {
+font-size: 56px;
         }
-
-        .modal-close {
-            top: 20px;
-            right: 30px;
-            font-size: 32px;
+.modal-close {
+top: 20px;
+right: 30px;
+font-size: 32px;
         }
-
-        .mobile-menu {
-            width: 100%;
+.mobile-menu {
+width: 100%;
         }
     }
-
-    @media (max-width: 480px) {
-        h2 { font-size: 28px; }
-        .hero h1 { font-size: 40px; }
-        .hero-lead { font-size: 16px; }
+@media (max-width: 480px) {
+h2 { font-size: 28px; }
+.hero h1 { font-size: 40px; }
+.hero-lead { font-size: 16px; }
     }
 </style>
 </head>
-
 <body>
-
 <!-- Menu Overlay -->
 <div class="menu-overlay" id="menuOverlay"></div>
-
 <!-- Navigation Header -->
 <div class="header-section">
-    <div class="brand">
-        <h1><a href="homepage.html">Alinah Danish</a></h1>
-    </div>
-    
-    <div class="nav-group">
-        <a href="homepage.html">Work</a>
-        <a href="archive.html">Archive</a>
-        <a href="about.html">About</a>
-        <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
-    </div>
-    
-    <div class="nav-group">
-        <a href="mailto:alinahdanish13@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
-    </div>
-    
-    <!-- Hamburger Icon -->
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+<div class="brand">
+<h1><a href="homepage.html">Alinah Danish</a></h1>
+</div>
+<div class="nav-group">
+<a href="homepage.html">Work</a>
+<a href="archive.html">Archive</a>
+<a href="about.html">About</a>
+<a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+</div>
+<div class="nav-group">
+<a href="mailto:alinahdanish13@gmail.com">Email</a>
+<a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+</div>
+<!-- Hamburger Icon -->
+<button class="hamburger" id="hamburger" aria-label="Menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</div>
+<!-- HERO -->
+<section class="hero">
+<img src="images/digitaluxmockup1.jpeg" alt="Ekko" class="hero-image">
+<div class="hero-content">
+<h1>Ekko</h1>
+<p class="hero-lead">An interactive storytelling app helping children practice speech sounds through play, designed for parents and children to use together.</p>
+</div>
+</section>
+<!-- META -->
+<div class="container">
+<div class="project-meta">
+<div class="meta-item">
+<div class="meta-label">Role</div>
+<div class="meta-value">UX/UI Designer<br>UX Researcher</div>
+</div>
+<div class="meta-item">
+<div class="meta-label">Timeline</div>
+<div class="meta-value">4 months<br>Aug – Dec 2025</div>
+</div>
+<div class="meta-item">
+<div class="meta-label">Tools</div>
+<div class="meta-value">Figma, Adobe Illustrator, Photoshop, After Effects, Flora Fauna AI</div>
+</div>
+</div>
+</div>
+<!-- INTRO -->
+<section class="intro">
+<div class="container-reading">
+<p class="lead">Children with Speech Sound Disorders benefit most from early, consistent intervention but current tools fail to support parents in sustaining effective at-home practice.</p>
+</div>
+</section>
+<!-- CHALLENGE -->
+<section class="challenge-section">
+<div class="container">
+<div class="two-col-layout">
+<div>
+<h3>The Problem</h3>
+<h2>The Challenge</h2>
+<p>Children with Speech Sound Disorders (SSD), particularly phonological disorders, benefit most from early and consistent intervention. The PACT (Parents and Children Together) model emphasizes collaborative family involvement in therapy, but current tools and resources fail to support parents in understanding, sustaining, and tracking at-home practice.</p>
+</div>
+<div>
+<h3>Opportunity</h3>
+<h2>How Might We</h2>
+<div class="hmw-callout">
+<p>
+<span class="hmw-prefix"><strong>How might we </strong>help parents and children work together to engage in structured, interactive, and accessible home-based speech therapy?</span>
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SOLUTION -->
+<section class="section-narrow">
+<div class="container-reading">
+<h3>Solution</h3>
+<h2>Value Proposition</h2>
+<p class="lead">Making speech practice playful, simple, and purposeful. By combining evidence-based speech strategies with interactive storytelling, Ekko helps children practice speech sounds through short stories and play-based exercises.</p>
+</div>
+</section>
+<!-- KEY FEATURES -->
+<div class="full-bleed">
+<div class="container">
+<div class="grid-2">
+<img src="images/keypink.jpg" alt="Key Features">
+<img src="images/digitaluxmockup2.jpeg" alt="App Features">
+</div>
+</div>
+</div>
+<!-- COMPETITIVE ANALYSIS -->
+<section class="image-section">
+<div class="container-reading">
+<h3>Research</h3>
+<h2>Competitive Analysis</h2>
+<p>I analyzed existing speech therapy apps to understand the competitive landscape and identify opportunities for differentiation.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/competitive analysis.jpg" alt="Competitive Analysis">
+</div>
+</div>
+</section>
+<!-- USER PERSONAS -->
+<section class="image-section" style="background: #fafafa;">
+<div class="container-reading">
+<h3>User Research</h3>
+<h2>User Personas & Empathy Maps</h2>
+<p>I developed two core user personas: a parent looking for meaningful, low-stress ways to support their child's speech practice through shared stories, and a young child who loves imaginative play and learns best through interactive experiences.</p>
+</div>
+<div class="container">
+<div class="grid-2">
+<div class="persona-item">
+<img src="images/Mom_Userpersona.jpg" alt="Parent Persona" onclick="openModal(this)">
+<div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<polyline points="15 3 21 3 21 9"></polyline>
+<polyline points="9 21 3 21 3 15"></polyline>
+<line x1="21" y1="3" x2="14" y2="10"></line>
+<line x1="3" y1="21" x2="10" y2="14"></line>
+</svg>
+</div>
+</div>
+<div class="persona-item">
+<img src="images/Mom_Empathymap.jpg" alt="Parent Empathy Map" onclick="openModal(this)">
+<div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<polyline points="15 3 21 3 21 9"></polyline>
+<polyline points="9 21 3 21 3 15"></polyline>
+<line x1="21" y1="3" x2="14" y2="10"></line>
+<line x1="3" y1="21" x2="10" y2="14"></line>
+</svg>
+</div>
+</div>
+<div class="persona-item">
+<img src="images/Child_Userpersona.jpg" alt="Child Persona" onclick="openModal(this)">
+<div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<polyline points="15 3 21 3 21 9"></polyline>
+<polyline points="9 21 3 21 3 15"></polyline>
+<line x1="21" y1="3" x2="14" y2="10"></line>
+<line x1="3" y1="21" x2="10" y2="14"></line>
+</svg>
+</div>
+</div>
+<div class="persona-item">
+<img src="images/Child_Empathymap.jpg" alt="Child Empathy Map" onclick="openModal(this)">
+<div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+<polyline points="15 3 21 3 21 9"></polyline>
+<polyline points="9 21 3 21 3 15"></polyline>
+<line x1="21" y1="3" x2="14" y2="10"></line>
+<line x1="3" y1="21" x2="10" y2="14"></line>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- USER JOURNEY -->
+<section class="image-section">
+<div class="container-reading">
+<h3>User Experience</h3>
+<h2>User Journey</h2>
+<p>This user journey highlights moments of excitement, potential friction, and various opportunities to create a positive and rewarding experience for both users.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/userjourney.jpg" alt="User Journey">
+</div>
+</div>
+</section>
+<!-- SITEMAP -->
+<section class="image-section" style="background: #fafafa;">
+<div class="container-reading">
+<h3>Information Architecture</h3>
+<h2>Sitemap</h2>
+<p>I created a sitemap to visualize important features and flows of the app. This helped me organize ideas and content in a way that planned user navigation and ensured each feature had been addressed.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/Sitemap 2.jpg" alt="Sitemap">
+</div>
+</div>
+</section>
+<!-- BUSINESS MODEL CANVAS -->
+<section class="image-section">
+<div class="container-reading">
+<h3>Business Strategy</h3>
+<h2>Business Model Canvas</h2>
+<p>My goal was to clarify how Ekko operates and creates value. The canvas focuses on the app's core value—making speech practice accessible, effective, and playful through interactive stories. It also highlights how the app engages its audiences, from children to educators, fostering interactive learning and supporting a sustainable content ecosystem.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/Buisness model canvas 2.jpg" alt="Business Model Canvas">
+</div>
+</div>
+</section>
+<!-- WIREFRAMES -->
+<section class="image-section" style="background: #fafafa;">
+<div class="container-reading">
+<h3>Design Process</h3>
+<h2>Mid-Fidelity Wireframes</h2>
+<p>At this stage, I moved on to create mid-fidelity wireframes of the main key features.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/midfidelity_wireframes 1.jpg" alt="Wireframes">
+</div>
+</div>
+</section>
+<!-- USER TESTING -->
+<section class="section-narrow">
+<div class="container-reading">
+<h3>Validation</h3>
+<h2>User Testing</h2>
+<p>Once my wireframes were complete, I conducted a series of user testing sessions to validate design decisions, evaluate usability, identify points of confusion, and gather feedback on the overall flow and engagement of the app.</p>
+</div>
+<div class="container">
+<div class="participants-grid">
+<div class="participant">
+<h3>Participants</h3>
+<div class="participant-avatar"></div>
+<strong>Dr. Yao Du</strong>
+<p>Clinical Assistant Professor in Speech-Language Pathology</p>
+</div>
+<div class="participant">
+<div class="participant-avatar"></div>
+<strong>Dr. Yilan Liu</strong>
+<p>Associate Professor at USC with a focus on AI and child communication disorders</p>
+</div>
+<div class="participant">
+<div class="participant-avatar"></div>
+<strong>Mina Danish</strong>
+<p>Interventionist, Orton-Gillingham Certified</p>
+</div>
+<div class="participant">
+<div class="participant-avatar"></div>
+<strong>Azka Sattar</strong>
+<p>Recent USC graduate with a degree in Psychology</p>
+</div>
+<div class="participant">
+<div class="participant-avatar"></div>
+<strong>Ali Khan</strong>
+<p>Product Marketing Manager in Ed-Tech</p>
+</div>
+<div class="participant">
+<div class="participant-avatar"></div>
+<strong>Namrah Ali</strong>
+<p>Deputy Head at The Next Generation School, 22+ years in education</p>
+</div>
+</div>
+<div class="goals-method">
+<div class="method-card">
+<h4>Goals</h4>
+<ul>
+<li>Evaluate clarity of onboarding flow</li>
+<li>Review main feature flows for gaps</li>
+<li>Determine understanding of progress feedback</li>
+<li>Evaluate exercises</li>
+<li>Assess story selection flow</li>
+</ul>
+</div>
+<div class="method-card">
+<h4>Method</h4>
+<ul>
+<li>Concept testing</li>
+<li>Feature testing</li>
+<li>Feature ranking</li>
+<li>Co-design with participants</li>
+<li>Synthesizing research</li>
+<li>Updating wireframes based on key learnings</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- STATS -->
+<section class="stats-section">
+<div class="container">
+<div class="stat-block">
+<div class="stat-number">100%</div>
+<p class="stat-description">of users reported confusion around progress tracking, indicating a need for clearer and more meaningful feedback systems.</p>
+</div>
+<div class="stat-block">
+<div class="stat-number">66%</div>
+<p class="stat-description">of participants wanted more types of games to reinforce phonics and comprehension.</p>
+</div>
+</div>
+</section>
+<!-- FEATURE RANKING -->
+<section class="image-section" style="background: #fafafa;">
+<div class="container-reading">
+<h3>Prioritization</h3>
+<h2>Feature Ranking</h2>
+<p>I conducted feature ranking to validate which features would deliver the most value to users and inform prioritization decisions for the product roadmap. This method helped bridge the gap between my design assumptions and actual user needs, revealing that progress tracking and feedback systems were critical priorities for parents and experts in the field.</p>
+</div>
+<div class="container">
+<div class="feature-cards-grid">
+<img src="images/f1.jpg" alt="Feature 1">
+<img src="images/f2.jpg" alt="Feature 2">
+<img src="images/f3.jpg" alt="Feature 3">
+<img src="images/f4.jpg" alt="Feature 4">
+<img src="images/f5.jpg" alt="Feature 5">
+<img src="images/f6.jpg" alt="Feature 6">
+</div>
+<div class="grid-2">
+<img src="images/featurerank1.jpg" alt="Feature Ranking Results 1">
+<img src="images/featurerank2.jpg" alt="Feature Ranking Results 2">
+</div>
+</div>
+</section>
+<!-- KEY LEARNINGS -->
+<section class="insights-section">
+<div class="container-reading">
+<h3>Insights</h3>
+<h2>Key Learnings</h2>
+</div>
+<div class="container">
+<div class="insights-grid">
+<div class="insight-card">
+<h4>Gratification Drives Engagement</h4>
+<p>Participants emphasized the need for rewards, badges, and recognition.</p>
+<p>Children learn best when they feel celebrated—visible progress and rewards act as motivators.</p>
+<p><span class="design-implication">Design implication:</span> A rewards page that visually marks progress and builds motivation.</p>
+</div>
+<div class="insight-card">
+<h4>Control Matters</h4>
+<p>Participants wanted manual control to flip back and forth between pages in the story flow instead of it being automatic.</p>
+<p>Homepage layout also felt cluttered and should be updated to feel more intuitive for children.</p>
+<p><span class="design-implication">Design implication:</span> Integrate clear back or next buttons.</p>
+</div>
+<div class="insight-card">
+<h4>Clarity Over Numbers</h4>
+<p>Participants found the percentage scores unclear and unhelpful. They didn't know what 5% or 10% represented.</p>
+<p><span class="design-implication">Design implication:</span> Replace % with clear progress indicators such as "7/10 sounds mastered" or "3 new words learned today," plus badges or stars for achievements.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- BRAND POSITIONING -->
+<section class="image-section">
+<div class="container-reading">
+<h3>Brand Strategy</h3>
+<h2>Brand Positioning</h2>
+<p>To differentiate Ekko in the competitive landscape of speech therapy tools, I positioned the brand at the intersection of education and play. The positioning strategy emphasizes accessibility, evidence-based methods, and family-centered learning while maintaining a warm, approachable tone that resonates with both parents seeking effective solutions and children who want engaging experiences.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/brandpos2.jpg" alt="Brand Positioning">
+</div>
+</div>
+</section>
+<!-- STYLESCAPES -->
+<section class="image-section" style="background: #fafafa;">
+<div class="container-reading">
+<h3>Visual Exploration</h3>
+<h2>Stylescapes</h2>
+</div>
+<div class="container">
+<div class="grid-3">
+<img src="images/stylescape1.jpg" alt="Stylescape 1">
+<img src="images/stylescape2.jpg" alt="Stylescape 2">
+<img src="images/stylescape3.jpg" alt="Stylescape 3">
+</div>
+</div>
+</section>
+<!-- BRAND SYSTEM -->
+<section class="image-section">
+<div class="container-reading">
+<h3>Visual Identity</h3>
+<h2>Brand System</h2>
+<p>The brand system brings together all visual elements into a cohesive identity. From the playful logomark to the carefully selected color palette and typography, every element was designed to feel warm, approachable, and child-friendly while maintaining credibility with parents and educators.</p>
+</div>
+<div class="container">
+<div class="image-block">
+<img src="images/brandsys1.jpg" alt="Brand Logo">
+</div>
+<div class="image-block">
+<img src="images/brandsystemfinal.jpg" alt="Complete Brand System">
+</div>
+</div>
+</section>
+<!-- FINAL PROTOTYPE -->
+<section class="section-narrow" style="background: #fafafa;">
+<div class="container-reading">
+<h3>Final Design</h3>
+<h2>Final Prototype</h2>
+<p>The complete Ekko experience, refined through user feedback and ready to make speech practice feel like play.</p>
 </div>
 
-    <!-- HERO -->
-    <section class="hero">
-        <img src="images/digitaluxmockup1.jpeg" alt="Ekko" class="hero-image">
-        <div class="hero-content">
-            <h1>Ekko</h1>
-            <p class="hero-lead">An interactive storytelling app helping children practice speech sounds through play, designed for parents and children to use together.</p>
-        </div>
-    </section>
+<div class="container">
+<div class="prototype-layout">
+<!-- Video on Left -->
+<div class="prototype-video">
+<video width="100%" controls autoplay muted loop>
+<source src="images/Screen Recording 2026-01-03 at 1.44.05 AM.mov" type="video/quicktime">
+Your browser does not support the video tag.
+</video>
+</div>
 
-    <!-- META -->
-    <div class="container">
-        <div class="project-meta">
-            <div class="meta-item">
-                <div class="meta-label">Role</div>
-                <div class="meta-value">UX/UI Designer<br>UX Researcher</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Timeline</div>
-                <div class="meta-value">4 months<br>Aug – Dec 2025</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Tools</div>
-                <div class="meta-value">Figma, Adobe Illustrator, Photoshop, After Effects, Flora Fauna AI</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- INTRO -->
-    <section class="intro">
-        <div class="container-reading">
-            <p class="lead">Children with Speech Sound Disorders benefit most from early, consistent intervention but current tools fail to support parents in sustaining effective at-home practice.</p>
-        </div>
-    </section>
-
-    <!-- CHALLENGE -->
-    <section class="challenge-section">
-        <div class="container">
-            <div class="two-col-layout">
-                <div>
-                    <h3>The Problem</h3>
-                    <h2>The Challenge</h2>
-                    <p>Children with Speech Sound Disorders (SSD), particularly phonological disorders, benefit most from early and consistent intervention. The PACT (Parents and Children Together) model emphasizes collaborative family involvement in therapy, but current tools and resources fail to support parents in understanding, sustaining, and tracking at-home practice.</p>
-                </div>
-                <div>
-                    <h3>Opportunity</h3>
-                    <h2>How Might We</h2>
-                    <div class="hmw-callout">
-                        <p>
-                            <span class="hmw-prefix"><strong>How might we </strong>help parents and children work together to engage in structured, interactive, and accessible home-based speech therapy?</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOLUTION -->
-    <section class="section-narrow">
-        <div class="container-reading">
-            <h3>Solution</h3>
-            <h2>Value Proposition</h2>
-            <p class="lead">Making speech practice playful, simple, and purposeful. By combining evidence-based speech strategies with interactive storytelling, Ekko helps children practice speech sounds through short stories and play-based exercises.</p>
-        </div>
-    </section>
-
-    <!-- KEY FEATURES -->
-    <div class="full-bleed">
-        <div class="container">
-            <div class="grid-2">
-                <img src="images/keypink.jpg" alt="Key Features">
-                <img src="images/digitaluxmockup2.jpeg" alt="App Features">
-            </div>
-        </div>
-    </div>
-
-    <!-- COMPETITIVE ANALYSIS -->
-    <section class="image-section">
-        <div class="container-reading">
-            <h3>Research</h3>
-            <h2>Competitive Analysis</h2>
-            <p>I analyzed existing speech therapy apps to understand the competitive landscape and identify opportunities for differentiation.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/competitive analysis.jpg" alt="Competitive Analysis">
-            </div>
-        </div>
-    </section>
-
-    <!-- USER PERSONAS -->
-    <section class="image-section" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>User Research</h3>
-            <h2>User Personas & Empathy Maps</h2>
-            <p>I developed two core user personas: a parent looking for meaningful, low-stress ways to support their child's speech practice through shared stories, and a young child who loves imaginative play and learns best through interactive experiences.</p>
-        </div>
-        <div class="container">
-            <div class="grid-2">
-                <div class="persona-item">
-                    <img src="images/Mom_Userpersona.jpg" alt="Parent Persona" onclick="openModal(this)">
-                    <div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <polyline points="9 21 3 21 3 15"></polyline>
-                            <line x1="21" y1="3" x2="14" y2="10"></line>
-                            <line x1="3" y1="21" x2="10" y2="14"></line>
-                        </svg>
-                    </div>
-                </div>
-                <div class="persona-item">
-                    <img src="images/Mom_Empathymap.jpg" alt="Parent Empathy Map" onclick="openModal(this)">
-                    <div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <polyline points="9 21 3 21 3 15"></polyline>
-                            <line x1="21" y1="3" x2="14" y2="10"></line>
-                            <line x1="3" y1="21" x2="10" y2="14"></line>
-                        </svg>
-                    </div>
-                </div>
-                <div class="persona-item">
-                    <img src="images/Child_Userpersona.jpg" alt="Child Persona" onclick="openModal(this)">
-                    <div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <polyline points="9 21 3 21 3 15"></polyline>
-                            <line x1="21" y1="3" x2="14" y2="10"></line>
-                            <line x1="3" y1="21" x2="10" y2="14"></line>
-                        </svg>
-                    </div>
-                </div>
-                <div class="persona-item">
-                    <img src="images/Child_Empathymap.jpg" alt="Child Empathy Map" onclick="openModal(this)">
-                    <div class="expand-icon" onclick="openModal(event.target.previousElementSibling)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <polyline points="9 21 3 21 3 15"></polyline>
-                            <line x1="21" y1="3" x2="14" y2="10"></line>
-                            <line x1="3" y1="21" x2="10" y2="14"></line>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- USER JOURNEY -->
-    <section class="image-section">
-        <div class="container-reading">
-            <h3>User Experience</h3>
-            <h2>User Journey</h2>
-            <p>This user journey highlights moments of excitement, potential friction, and various opportunities to create a positive and rewarding experience for both users.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/userjourney.jpg" alt="User Journey">
-            </div>
-        </div>
-    </section>
-
-    <!-- SITEMAP -->
-    <section class="image-section" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>Information Architecture</h3>
-            <h2>Sitemap</h2>
-            <p>I created a sitemap to visualize important features and flows of the app. This helped me organize ideas and content in a way that planned user navigation and ensured each feature had been addressed.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/Sitemap 2.jpg" alt="Sitemap">
-            </div>
-        </div>
-    </section>
-
-    <!-- BUSINESS MODEL CANVAS -->
-    <section class="image-section">
-        <div class="container-reading">
-            <h3>Business Strategy</h3>
-            <h2>Business Model Canvas</h2>
-            <p>My goal was to clarify how Ekko operates and creates value. The canvas focuses on the app's core value—making speech practice accessible, effective, and playful through interactive stories. It also highlights how the app engages its audiences, from children to educators, fostering interactive learning and supporting a sustainable content ecosystem.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/Buisness model canvas 2.jpg" alt="Business Model Canvas">
-            </div>
-        </div>
-    </section>
-
-    <!-- WIREFRAMES -->
-    <section class="image-section" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>Design Process</h3>
-            <h2>Mid-Fidelity Wireframes</h2>
-            <p>At this stage, I moved on to create mid-fidelity wireframes of the main key features.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/midfidelity_wireframes 1.jpg" alt="Wireframes">
-            </div>
-        </div>
-    </section>
-
-    <!-- USER TESTING -->
-    <section class="section-narrow">
-        <div class="container-reading">
-            <h3>Validation</h3>
-            <h2>User Testing</h2>
-            <p>Once my wireframes were complete, I conducted a series of user testing sessions to validate design decisions, evaluate usability, identify points of confusion, and gather feedback on the overall flow and engagement of the app.</p>
-            
-        </div>
-
-        <div class="container">
-            <div class="participants-grid">
-                <div class="participant">
-                    <h3>Participants</h3>
-                    <div class="participant-avatar"></div>
-                    <strong>Dr. Yao Du</strong>
-                    <p>Clinical Assistant Professor in Speech-Language Pathology</p>
-                </div>
-                <div class="participant">
-                    <div class="participant-avatar"></div>
-                    <strong>Dr. Yilan Liu</strong>
-                    <p>Associate Professor at USC with a focus on AI and child communication disorders</p>
-                </div>
-                <div class="participant">
-                    <div class="participant-avatar"></div>
-                    <strong>Mina Danish</strong>
-                    <p>Interventionist, Orton-Gillingham Certified</p>
-                </div>
-                <div class="participant">
-                    <div class="participant-avatar"></div>
-                    <strong>Azka Sattar</strong>
-                    <p>Recent USC graduate with a degree in Psychology</p>
-                </div>
-                <div class="participant">
-                    <div class="participant-avatar"></div>
-                    <strong>Ali Khan</strong>
-                    <p>Product Marketing Manager in Ed-Tech</p>
-                </div>
-                <div class="participant">
-                    <div class="participant-avatar"></div>
-                    <strong>Namrah Ali</strong>
-                    <p>Deputy Head at The Next Generation School, 22+ years in education</p>
-                </div>
-            </div>
-
-            <div class="goals-method">
-                <div class="method-card">
-                    <h4>Goals</h4>
-                    <ul>
-                        <li>Evaluate clarity of onboarding flow</li>
-                        <li>Review main feature flows for gaps</li>
-                        <li>Determine understanding of progress feedback</li>
-                        <li>Evaluate exercises</li>
-                        <li>Assess story selection flow</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <h4>Method</h4>
-                    <ul>
-                        <li>Concept testing</li>
-                        <li>Feature testing</li>
-                        <li>Feature ranking</li>
-                        <li>Co-design with participants</li>
-                        <li>Synthesizing research</li>
-                        <li>Updating wireframes based on key learnings</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="stat-block">
-                <div class="stat-number">100%</div>
-                <p class="stat-description">of users reported confusion around progress tracking, indicating a need for clearer and more meaningful feedback systems.</p>
-            </div>
-            <div class="stat-block">
-                <div class="stat-number">66%</div>
-                <p class="stat-description">of participants wanted more types of games to reinforce phonics and comprehension.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FEATURE RANKING -->
-    <section class="image-section" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>Prioritization</h3>
-            <h2>Feature Ranking</h2>
-            <p>I conducted feature ranking to validate which features would deliver the most value to users and inform prioritization decisions for the product roadmap. This method helped bridge the gap between my design assumptions and actual user needs, revealing that progress tracking and feedback systems were critical priorities for parents and experts in the field.</p>
-        </div>
-
-        <div class="container">
-            <div class="feature-cards-grid">
-                <img src="images/f1.jpg" alt="Feature 1">
-                <img src="images/f2.jpg" alt="Feature 2">
-                <img src="images/f3.jpg" alt="Feature 3">
-                <img src="images/f4.jpg" alt="Feature 4">
-                <img src="images/f5.jpg" alt="Feature 5">
-                <img src="images/f6.jpg" alt="Feature 6">
-            </div>
-
-            <div class="grid-2">
-                <img src="images/featurerank1.jpg" alt="Feature Ranking Results 1">
-                <img src="images/featurerank2.jpg" alt="Feature Ranking Results 2">
-            </div>
-        </div>
-    </section>
-
-    <!-- KEY LEARNINGS -->
-    <section class="insights-section">
-        <div class="container-reading">
-            <h3>Insights</h3>
-            <h2>Key Learnings</h2>
-        </div>
-
-        <div class="container">
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <h4>Gratification Drives Engagement</h4>
-                    <p>Participants emphasized the need for rewards, badges, and recognition.</p>
-                    <p>Children learn best when they feel celebrated—visible progress and rewards act as motivators.</p>
-                    <p><span class="design-implication">Design implication:</span> A rewards page that visually marks progress and builds motivation.</p>
-                </div>
-                <div class="insight-card">
-                    <h4>Control Matters</h4>
-                    <p>Participants wanted manual control to flip back and forth between pages in the story flow instead of it being automatic.</p>
-                    <p>Homepage layout also felt cluttered and should be updated to feel more intuitive for children.</p>
-                    <p><span class="design-implication">Design implication:</span> Integrate clear back or next buttons.</p>
-                </div>
-                <div class="insight-card">
-                    <h4>Clarity Over Numbers</h4>
-                    <p>Participants found the percentage scores unclear and unhelpful. They didn't know what 5% or 10% represented.</p>
-                    <p><span class="design-implication">Design implication:</span> Replace % with clear progress indicators such as "7/10 sounds mastered" or "3 new words learned today," plus badges or stars for achievements.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND POSITIONING -->
-    <section class="image-section">
-        <div class="container-reading">
-            <h3>Brand Strategy</h3>
-            <h2>Brand Positioning</h2>
-            <p>To differentiate Ekko in the competitive landscape of speech therapy tools, I positioned the brand at the intersection of education and play. The positioning strategy emphasizes accessibility, evidence-based methods, and family-centered learning while maintaining a warm, approachable tone that resonates with both parents seeking effective solutions and children who want engaging experiences.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/brandpos2.jpg" alt="Brand Positioning">
-            </div>
-        </div>
-    </section>
-
-    <!-- STYLESCAPES -->
-    <section class="image-section" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>Visual Exploration</h3>
-            <h2>Stylescapes</h2>
-        </div>
-        <div class="container">
-            <div class="grid-3">
-                <img src="images/stylescape1.jpg" alt="Stylescape 1">
-                <img src="images/stylescape2.jpg" alt="Stylescape 2">
-                <img src="images/stylescape3.jpg" alt="Stylescape 3">
-            </div>
-        </div>
-    </section>
-
-    <!-- BRAND SYSTEM -->
-    <section class="image-section">
-        <div class="container-reading">
-            <h3>Visual Identity</h3>
-            <h2>Brand System</h2>
-            <p>The brand system brings together all visual elements into a cohesive identity. From the playful logomark to the carefully selected color palette and typography, every element was designed to feel warm, approachable, and child-friendly while maintaining credibility with parents and educators.</p>
-        </div>
-        <div class="container">
-            <div class="image-block">
-                <img src="images/brandsys1.jpg" alt="Brand Logo">
-            </div>
-            <div class="image-block">
-                <img src="images/brandsystemfinal.jpg" alt="Complete Brand System">
-            </div>
-        </div>
-    </section>
-
-    <!-- FINAL PROTOTYPE -->
-    <section class="section-narrow" style="background: #fafafa;">
-        <div class="container-reading">
-            <h3>Final Design</h3>
-            <h2>Final Prototype</h2>
-            <p>The complete Ekko experience, refined through user feedback and ready to make speech practice feel like play.</p>
-            <div style="margin-top: 60px; padding: 120px 0; background: #e0e0e0; border-radius: 2px; text-align: center;">
-                <p style="color: #666;">Interactive Figma prototype embed goes here</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MODAL -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImage" alt="Expanded view">
-    </div>
-
-    <script>
-        // Modal functionality
-        function openModal(element) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const img = element.tagName === 'IMG' ? element : element.querySelector('img');
-            
-            modal.classList.add('active');
-            modalImg.src = img.src;
-            modalImg.alt = img.alt;
-            document.body.style.overflow = 'hidden';
+<!-- Images on Right -->
+<div class="prototype-images">
+<img src="images/one.png" alt="Prototype Screen 1">
+<img src="images/two.png" alt="Prototype Screen 2">
+<img src="images/three.png" alt="Prototype Screen 3">
+</div>
+</div>
+</div>
+</section>
+<!-- MODAL -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+<span class="modal-close">&times;</span>
+<img class="modal-content" id="modalImage" alt="Expanded view">
+</div>
+<script>
+// Modal functionality
+function openModal(element) {
+const modal = document.getElementById('imageModal');
+const modalImg = document.getElementById('modalImage');
+const img = element.tagName === 'IMG' ? element : element.querySelector('img');
+modal.classList.add('active');
+modalImg.src = img.src;
+modalImg.alt = img.alt;
+document.body.style.overflow = 'hidden';
         }
-
-        function closeModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
+function closeModal() {
+const modal = document.getElementById('imageModal');
+modal.classList.remove('active');
+document.body.style.overflow = 'auto';
         }
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
+document.addEventListener('keydown', function(event) {
+if (event.key === 'Escape') {
+closeModal();
             }
         });
-
-        document.getElementById('modalImage').addEventListener('click', function(event) {
-            event.stopPropagation();
+document.getElementById('modalImage').addEventListener('click', function(event) {
+event.stopPropagation();
         });
-
-        // Hamburger menu functionality
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menuOverlay = document.getElementById('menuOverlay');
-
-        function toggleMenu() {
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            
-            // Prevent body scroll when menu is open
-            if (mobileMenu.classList.contains('active')) {
-                document.body.style.overflow = 'hidden';
+// Hamburger menu functionality
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+const menuOverlay = document.getElementById('menuOverlay');
+function toggleMenu() {
+hamburger.classList.toggle('active');
+mobileMenu.classList.toggle('active');
+menuOverlay.classList.toggle('active');
+// Prevent body scroll when menu is open
+if (mobileMenu.classList.contains('active')) {
+document.body.style.overflow = 'hidden';
             } else {
-                document.body.style.overflow = '';
+document.body.style.overflow = '';
             }
         }
-
-        hamburger.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking on a link
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
+hamburger.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+// Close menu when clicking on a link
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+link.addEventListener('click', toggleMenu);
         });
-    </script>
+</script>
 </body>
 </html>
