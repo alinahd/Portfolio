@@ -248,6 +248,9 @@ body {
     flex-direction: column;
     text-decoration: none;
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Fix for iOS touch */
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
 }
 
 .project-card:hover {
@@ -357,6 +360,7 @@ body {
 /* Coming Soon Overlay */
 .coming-soon-card {
     cursor: default;
+    pointer-events: auto;
 }
 
 .coming-soon-card:hover {
@@ -380,6 +384,7 @@ body {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .coming-soon-card:hover .coming-soon-overlay {
@@ -461,6 +466,20 @@ body {
     .image-container {
         height: 340px;
     }
+    
+    /* Make taglines visible on mobile since hover doesn't work well */
+    .project-tagline {
+        opacity: 0.8;
+    }
+    
+    /* Disable hover transforms on mobile */
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .project-card:hover img {
+        transform: none;
+    }
 }
 
 @media (max-width: 640px) {
@@ -515,6 +534,11 @@ body {
     .mobile-menu {
         width: 100%;
         right: -100%;
+    }
+    
+    /* Ensure taglines are visible on small mobile */
+    .project-tagline {
+        opacity: 1;
     }
 }
 
@@ -693,6 +717,13 @@ menuOverlay.addEventListener('click', toggleMenu);
 const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
 mobileMenuLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
+});
+
+// Fix for iOS Safari touch handling on project cards
+document.querySelectorAll('.project-card:not(.coming-soon-card)').forEach(card => {
+    card.addEventListener('touchstart', function() {
+        // This helps iOS Safari recognize the element as tappable
+    }, { passive: true });
 });
 </script>
 
