@@ -87,7 +87,7 @@ body {
     padding: 8px;
     background: none;
     border: none;
-    z-index: 1001;
+    z-index: 101;
     position: relative;
 }
 
@@ -109,6 +109,10 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.hamburger.active {
+    z-index: 1001;
 }
 
 /* Mobile Menu */
