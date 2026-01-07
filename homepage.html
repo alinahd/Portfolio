@@ -124,10 +124,12 @@ body {
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 200;
     padding: 80px 32px 32px 32px;
+    pointer-events: none;
 }
 
 .mobile-menu.active {
     right: 0;
+    pointer-events: auto;
 }
 
 .mobile-menu-content {
@@ -166,10 +168,12 @@ body {
     z-index: 150;
     opacity: 0;
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .menu-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* Hero Section */
@@ -561,6 +565,8 @@ body {
     letter-spacing: 0.08em;
     color: #0a0a0a;
 }
+
+
 </style>
 </head>
 <body>
