@@ -32,7 +32,9 @@ body {
     gap: 64px;
     align-items: start;
     border-bottom: 1px solid #e8e8e8;
-    position: relative;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
     z-index: 100;
 }
 
@@ -89,6 +91,7 @@ body {
     border: none;
     z-index: 101;
     position: relative;
+    align-self: center;
 }
 
 .hamburger span {
@@ -97,6 +100,14 @@ body {
     background-color: #0a0a0a;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 2px;
+    pointer-events: none;
+}
+
+.hamburger.active {
+    position: fixed;
+    top: 40px;
+    right: 24px;
+    z-index: 1001;
 }
 
 .hamburger.active span:nth-child(1) {
@@ -109,10 +120,6 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
-}
-
-.hamburger.active {
-    z-index: 1001;
 }
 
 /* Mobile Menu */
@@ -493,6 +500,11 @@ body {
 @media (max-width: 640px) {
     .header-section {
         padding: 32px 20px 20px 20px;
+    }
+    
+    .hamburger.active {
+        top: 32px;
+        right: 20px;
     }
     
     .hero {
