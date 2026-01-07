@@ -253,8 +253,13 @@ body {
     text-decoration: none;
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     /* Fix for iOS touch */
-    -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    -webkit-touch-callout: none;
     touch-action: manipulation;
+}
+
+.project-card:active {
+    opacity: 0.7;
 }
 
 .project-card:hover {
@@ -276,6 +281,7 @@ body {
     object-fit: cover;
     display: block;
     transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
 }
 
 .project-card:hover img {
@@ -284,6 +290,7 @@ body {
 
 .project-info {
     padding: 20px 0 0 0;
+    pointer-events: none;
 }
 
 .project-meta {
@@ -723,10 +730,28 @@ mobileMenuLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
 });
 
-// Fix for iOS Safari touch handling on project cards
+// Enhanced mobile touch handling for project cards
 document.querySelectorAll('.project-card:not(.coming-soon-card)').forEach(card => {
-    card.addEventListener('touchstart', function() {
-        // This helps iOS Safari recognize the element as tappable
+    let touchStartTime;
+    let touchMoved = false;
+    
+    card.addEventListener('touchstart', function(e) {
+        touchStartTime = Date.now();
+        touchMoved = false;
+    }, { passive: true });
+    
+    card.addEventListener('touchmove', function(e) {
+        touchMoved = true;
+    }, { passive: true });
+    
+    card.addEventListener('touchend', function(e) {
+        const touchDuration = Date.now() - touchStartTime;
+        
+        // Only navigate if it was a quick tap (not a long press) and didn't move
+        if (!touchMoved && touchDuration < 500) {
+            // Let the default link behavior work
+            // The link will navigate naturally
+        }
     }, { passive: true });
 });
 </script>
