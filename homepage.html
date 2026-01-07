@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alinah Danish</title>
-
 <style>
 * {
     margin: 0;
@@ -15,60 +14,104 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: #ffffff;
+    padding: 0;
+    margin: 0;
     color: #0a0a0a;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
 
-/* ================= HEADER ================= */
-
+/* Header Navigation */
 .header-section {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 48px 32px 32px;
+    padding: 48px 32px 32px 32px;
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 64px;
+    align-items: start;
     border-bottom: 1px solid #e8e8e8;
     position: relative;
     z-index: 50;
 }
 
+.brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
 .brand h1 {
     font-size: 17px;
     font-weight: 500;
+    color: #0a0a0a;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+}
+
+.brand p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666666;
+    line-height: 1.4;
+    letter-spacing: -0.003em;
 }
 
 .nav-group {
     display: flex;
     gap: 28px;
+    align-items: center;
 }
 
 .nav-group a {
     font-size: 14px;
-    text-decoration: none;
+    font-weight: 450;
     color: #0a0a0a;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    letter-spacing: -0.006em;
 }
 
-/* ================= HAMBURGER ================= */
+.nav-group a:hover {
+    color: #666666;
+}
 
+/* Hamburger Menu */
 .hamburger {
     display: none;
     flex-direction: column;
     gap: 5px;
+    cursor: pointer;
+    padding: 8px;
     background: none;
     border: none;
-    cursor: pointer;
+    position: relative;
+    align-self: center;
 }
 
 .hamburger span {
     width: 24px;
     height: 2px;
-    background: #0a0a0a;
+    background-color: #0a0a0a;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
 }
 
-/* ================= MOBILE MENU ================= */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
 
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -76,156 +119,584 @@ body {
     right: -100%;
     width: 280px;
     height: 100vh;
-    background: #fff;
-    transition: right 0.4s ease;
+    background-color: #ffffff;
+    box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 200;
-
-    /* 🔴 KEY FIX */
-    pointer-events: none;
+    padding: 80px 32px 32px 32px;
 }
 
 .mobile-menu.active {
     right: 0;
-    pointer-events: auto;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.mobile-nav-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-nav-section a {
+    font-size: 16px;
+    font-weight: 450;
+    color: #0a0a0a;
+    text-decoration: none;
+    transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: -0.006em;
+}
+
+.mobile-nav-section a:hover {
+    color: #666666;
 }
 
 .menu-overlay {
     display: none;
     position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 150;
-
-    /* 🔴 KEY FIX */
-    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-overlay.active {
-    pointer-events: auto;
+    opacity: 1;
 }
 
-/* ================= HERO ================= */
-
+/* Hero Section */
 .hero {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 96px 32px;
+    padding: 96px 32px 72px 32px;
 }
 
-/* ================= WORK ================= */
+.hero h2 {
+    font-size: 48px;
+    font-weight: 350;
+    color: #0a0a0a;
+    line-height: 1.25;
+    max-width: 920px;
+    letter-spacing: -0.028em;
+    margin-bottom: 0;
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+}
 
+.hero-meta {
+    display: flex;
+    gap: 56px;
+    margin-top: 48px;
+    flex-wrap: wrap;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.meta-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #999999;
+}
+
+.meta-value {
+    font-size: 15px;
+    font-weight: 400;
+    color: #0a0a0a;
+    line-height: 1.5;
+    letter-spacing: -0.008em;
+    max-width: 340px;
+}
+
+/* Work Grid */
 .work-section {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 56px 32px 96px;
-
-    /* 🔴 SAFETY */
+    padding: 56px 32px 96px 32px;
     position: relative;
     z-index: 1;
+}
+
+.section-label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999999;
+    margin-bottom: 40px;
 }
 
 .work-grid {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 24px;
+    margin-top: 40px;
 }
 
 .project-card {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
     text-decoration: none;
-    color: inherit;
-    display: block;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Fix for iOS touch */
     -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
 }
 
 .image-container {
+    width: 100%;
     height: 420px;
+    overflow: hidden;
+    border-radius: 2px;
     background: #f7f7f7;
+    position: relative;
 }
 
 .project-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ================= RESPONSIVE ================= */
+.project-card:hover img {
+    transform: scale(1.03);
+}
 
+.project-info {
+    padding: 20px 0 0 0;
+}
+
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 10px;
+}
+
+.project-label {
+    font-size: 17px;
+    color: #0a0a0a;
+    font-weight: 500;
+    letter-spacing: -0.012em;
+    line-height: 1.2;
+}
+
+.project-year {
+    font-size: 13px;
+    color: #999999;
+    font-weight: 400;
+    letter-spacing: -0.003em;
+    font-variant-numeric: tabular-nums;
+}
+
+.project-role {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: -0.003em;
+    line-height: 1.4;
+}
+
+.project-tagline {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.006em;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 42px;
+}
+
+.project-card:hover .project-tagline {
+    opacity: 1;
+}
+
+/* Featured project - larger */
+.featured {
+    grid-column: span 8;
+}
+
+.featured .image-container {
+    height: 560px;
+}
+
+.featured .project-label {
+    font-size: 19px;
+}
+
+.featured .project-tagline {
+    font-size: 15px;
+    max-width: 600px;
+}
+
+/* Standard projects */
+.standard {
+    grid-column: span 4;
+}
+
+/* Two-column projects */
+.half {
+    grid-column: span 6;
+}
+
+/* Coming Soon Overlay */
+.coming-soon-card {
+    cursor: default;
+    pointer-events: auto;
+}
+
+.coming-soon-card:hover {
+    transform: none;
+}
+
+.coming-soon-card:hover img {
+    transform: none;
+}
+
+.coming-soon-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.coming-soon-card:hover .coming-soon-overlay {
+    opacity: 1;
+}
+
+.coming-soon-overlay span {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #0a0a0a;
+}
+
+/* Responsive design */
 @media (max-width: 968px) {
+    .header-section {
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        padding: 40px 24px 24px 24px;
+    }
+    
     .nav-group {
         display: none;
     }
-
+    
     .hamburger {
         display: flex;
     }
-
-    .mobile-menu,
+    
+    .mobile-menu {
+        display: block;
+    }
+    
     .menu-overlay {
         display: block;
     }
-
+    
+    .hero {
+        padding: 72px 24px 56px 24px;
+    }
+    
+    .hero h2 {
+        font-size: 38px;
+        letter-spacing: -0.024em;
+    }
+    
+    .hero-meta {
+        gap: 40px;
+    }
+    
+    .work-section {
+        padding: 48px 24px 72px 24px;
+    }
+    
     .work-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .featured,
+    .standard,
+    .half {
+        grid-column: span 2;
+    }
+    
+    .featured .image-container {
+        height: 420px;
+    }
+    
+    .featured .project-label {
+        font-size: 17px;
+    }
+    
+    .featured .project-tagline {
+        font-size: 14px;
+    }
+    
+    .image-container {
+        height: 340px;
+    }
+    
+    /* Make taglines visible on mobile since hover doesn't work well */
+    .project-tagline {
+        opacity: 0.8;
+    }
+    
+    /* Disable hover transforms on mobile */
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .project-card:hover img {
+        transform: none;
     }
 }
 
 @media (max-width: 640px) {
+    .header-section {
+        padding: 32px 20px 20px 20px;
+    }
+    
+    .hero {
+        padding: 56px 20px 40px 20px;
+    }
+    
+    .hero h2 {
+        font-size: 32px;
+        letter-spacing: -0.020em;
+        line-height: 1.2;
+    }
+    
+    .hero-meta {
+        gap: 32px;
+        margin-top: 40px;
+    }
+    
+    .meta-value {
+        font-size: 14px;
+    }
+    
+    .work-section {
+        padding: 40px 20px 64px 20px;
+    }
+    
     .work-grid {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
-
-    .image-container {
+    
+    .featured,
+    .standard,
+    .half {
+        grid-column: span 1;
+    }
+    
+    .image-container,
+    .featured .image-container {
         height: 300px;
     }
-
+    
+    .featured .project-label,
+    .project-label {
+        font-size: 16px;
+    }
+    
     .mobile-menu {
         width: 100%;
+        right: -100%;
     }
+    
+    /* Ensure taglines are visible on small mobile */
+    .project-tagline {
+        opacity: 1;
+    }
+}
+
+/* Status badge */
+.status-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+    padding: 7px 14px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0a0a0a;
 }
 </style>
 </head>
-
 <body>
 
+<!-- Menu Overlay -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
-<header class="header-section">
+<!-- Navigation Header -->
+<div class="header-section">
     <div class="brand">
         <h1>Alinah Danish</h1>
     </div>
-
+    
     <div class="nav-group">
         <a href="homepage.html">Work</a>
         <a href="archive.html">Archive</a>
         <a href="about.html">About</a>
+        <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
     </div>
-
-    <button class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
+    
+    <div class="nav-group">
+        <a href="mailto:alinahdanish13@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+    </div>
+    
+    <!-- Hamburger Icon -->
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
-</header>
-
-<div class="mobile-menu" id="mobileMenu">
-    <a href="homepage.html">Work</a>
-    <a href="archive.html">Archive</a>
-    <a href="about.html">About</a>
 </div>
 
-<section class="hero">
-    <h2>I design digital experiences.</h2>
-</section>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <div class="mobile-nav-section">
+            <a href="homepage.html">Work</a>
+            <a href="archive.html">Archive</a>
+            <a href="about.html">About</a>
+            <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+        </div>
+        <div class="mobile-nav-section">
+            <a href="mailto:alinahdanish13@gmail.com">Email</a>
+            <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+</div>
 
-<section class="work-section">
+<!-- Hero Section -->
+<div class="hero">
+    <h2>I design digital experiences that bridge creativity and technology through research, prototyping, and 3D visualization.</h2>
+    
+    <div class="hero-meta">
+        <div class="meta-item">
+            <span class="meta-label">Currently</span>
+            <span class="meta-value">Studying at Parsons School of Design, New York</span>
+        </div>
+        <div class="meta-item">
+            <span class="meta-label">Skills</span>
+            <span class="meta-value">UX/UI Design, User Research, Prototyping, 3D Design, Front-end Development</span>
+        </div>
+    </div>
+</div>
+
+<!-- Work Section -->
+<div class="work-section">
+    <div class="section-label">Selected Work</div>
+    
     <div class="work-grid">
-        <a href="ekko3.html" class="project-card">
+        <!-- Featured Project 1 -->
+        <a href="ekko3.html" class="project-card featured">
             <div class="image-container">
-                <img src="images/digitaluxmockup1.jpeg" alt="">
+                <img src="images/digitaluxmockup1.jpeg" alt="Ekko language learning app interface with interactive speaking exercises">
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-label">Ekko</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-role">Product Design · UX Research · Prototyping · Interaction Design</div>
+                <div class="project-tagline">Interactive stories for speech practice.</div>
             </div>
         </a>
+        
+        <!-- Standard Project 1 -->
+        <a href="nearby.html" class="project-card standard">
+            <div class="image-container">
+                <img src="images/nearby/mockup1.jpg" alt="Nearby app interface showing community connection features during infrastructure failure">
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-label">Nearby</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-role">Product Design · Interaction Design</div>
+                <div class="project-tagline">Connecting communities when infrastructure fails.</div>
+            </div>
+        </a>
+        
+        <!-- Two Half Projects -->
+        <a href="taschen.html" class="project-card half">
+            <div class="image-container">
+                <img src="images/eco taschen/logo2.jpg" alt="Eco Taschen sustainable packaging design exploration">
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-label">Eco Taschen</span>
+                    <span class="project-year">2023 – 24</span>
+                </div>
+                <div class="project-role">Internship · Brand Design · Sustainability Research</div>
+                <div class="project-tagline">Exploring what eco-friendly design looks like.</div>
+            </div>
+        </a>
+        
+        <div class="project-card half coming-soon-card">
+            <div class="image-container">
+                <img src="images/blender/placeholder.jpeg" alt="3D typography explorations showing type as spatial sculptural form">
+                <div class="coming-soon-overlay">
+                    <span>COMING SOON</span>
+                </div>
+            </div>
+            <div class="project-info">
+                <div class="project-meta">
+                    <span class="project-label">Meaning Made Visible</span>
+                    <span class="project-year">2025</span>
+                </div>
+                <div class="project-role">3D Design · Typography · Blender</div>
+                <div class="project-tagline">Experimental typography series transforming letterforms into three-dimensional spatial objects.</div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
 <script>
+// Hamburger menu functionality
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 const menuOverlay = document.getElementById('menuOverlay');
@@ -234,12 +705,30 @@ function toggleMenu() {
     hamburger.classList.toggle('active');
     mobileMenu.classList.toggle('active');
     menuOverlay.classList.toggle('active');
-    document.body.style.overflow =
-        mobileMenu.classList.contains('active') ? 'hidden' : '';
+    
+    // Prevent body scroll when menu is open
+    if (mobileMenu.classList.contains('active')) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = '';
+    }
 }
 
 hamburger.addEventListener('click', toggleMenu);
 menuOverlay.addEventListener('click', toggleMenu);
+
+// Close menu when clicking on a link
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+});
+
+// Fix for iOS Safari touch handling on project cards
+document.querySelectorAll('.project-card:not(.coming-soon-card)').forEach(card => {
+    card.addEventListener('touchstart', function() {
+        // This helps iOS Safari recognize the element as tappable
+    }, { passive: true });
+});
 </script>
 
 </body>
