@@ -455,7 +455,11 @@ section { padding: 140px 0; }
     align-items: start;
 }
 .prototype-video { position: sticky; top: 40px; }
-.prototype-video video { width: 100%; border-radius: 8px; }
+.prototype-video video {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
 .prototype-images { display: flex; flex-direction: column; gap: 40px; }
 .prototype-images img { width: 100%; border-radius: 8px; }
 
@@ -699,8 +703,7 @@ section { padding: 140px 0; }
     </div>
     <div class="container">
         <div class="image-block">
-            <!-- FIXED: corrected filename to match your actual file -->
-            <img src="images/Buisnessmodel canvas2.jpg" alt="Business Model Canvas">
+            <img src="images/bmc2.jpg" alt="Business Model Canvas">
         </div>
     </div>
 </section>
@@ -908,10 +911,9 @@ section { padding: 140px 0; }
     <div class="container">
         <div class="prototype-layout">
             <div class="prototype-video">
-                <!-- FIXED: mp4 works in all browsers. Convert your .mov to .mp4 and rename it -->
-                <video width="100%" controls autoplay muted loop playsinline>
+                <video controls autoplay muted loop playsinline webkit-playsinline>
+                    <source src="images/video_screenrecording.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
                     <source src="images/video_screenrecording.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
                 </video>
             </div>
             <div class="prototype-images">
