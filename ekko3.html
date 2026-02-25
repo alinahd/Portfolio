@@ -133,12 +133,12 @@ section { padding: 140px 0; }
 .feature-cards-grid img:hover { transform: translateY(-4px); }
 
 /* MODAL */
-.modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(0,0,0,0.95); align-items: center; justify-content: center; }
+.modal { display: none; position: fixed; z-index: 1000; inset: 0; background: rgba(255,255,255,0.3); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); align-items: center; justify-content: center; }
 .modal.active { display: flex; }
-.modal-content { max-width: 90%; max-height: 90%; object-fit: contain; animation: zoom 0.3s; }
+.modal-content { max-width: 90%; max-height: 90%; object-fit: contain; animation: zoom 0.3s; border-radius: 12px; box-shadow: 0 32px 80px rgba(0,0,0,0.2); }
 @keyframes zoom { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-.modal-close { position: absolute; top: 30px; right: 50px; color: white; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 1001; transition: opacity 0.2s; }
-.modal-close:hover { opacity: 0.7; }
+.modal-close { position: absolute; top: 30px; right: 50px; color: #1a1a1a; font-size: 40px; font-weight: 300; cursor: pointer; z-index: 1001; transition: opacity 0.2s; }
+.modal-close:hover { opacity: 0.5; }
 .expand-icon { position: absolute; bottom: 15px; right: 15px; width: 36px; height: 36px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s; cursor: pointer; z-index: 10; }
 .persona-item { position: relative; cursor: pointer; }
 .persona-item:hover .expand-icon { opacity: 1; }
@@ -251,7 +251,7 @@ section { padding: 140px 0; }
         <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
     </div>
     <div class="nav-group">
-        <a href="mailto:alinahdanish13@gmail.com">Email</a>
+        <a href="/cdn-cgi/l/email-protection#84e5e8edeae5ece0e5eaedf7ecb5b7c4e3e9e5ede8aae7ebe9">Email</a>
         <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -268,7 +268,7 @@ section { padding: 140px 0; }
             <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
         </div>
         <div class="mobile-nav-section">
-            <a href="mailto:alinahdanish13@gmail.com">Email</a>
+            <a href="/cdn-cgi/l/email-protection#0c6d6065626d64686d62657f643d3f4c6b616d6560226f6361">Email</a>
             <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
         </div>
     </div>
@@ -644,13 +644,14 @@ section { padding: 140px 0; }
         <div class="prototype-tabs">
             <div class="tab-buttons">
                 <button class="tab-btn active" onclick="switchTab('screens', this)">Screens</button>
-                <button class="tab-btn" onclick="switchTab('video', this)">Walkthrough Video</button>
+                <button class="tab-btn" onclick="switchTab('video', this)">App Walkthrough</button>
+                <button class="tab-btn" onclick="switchTab('marketing', this)">Marketing Video</button>
             </div>
             <div id="tab-screens" class="tab-panel active">
                 <div class="screens-grid">
-                    <img src="images/one.png" alt="Prototype Screen 1">
-                    <img src="images/two.png" alt="Prototype Screen 2">
-                    <img src="images/three.png" alt="Prototype Screen 3">
+                    <img src="images/one.png" alt="Prototype Screen 1" onclick="openModal(this)" style="cursor:pointer;">
+                    <img src="images/two.png" alt="Prototype Screen 2" onclick="openModal(this)" style="cursor:pointer;">
+                    <img src="images/three.png" alt="Prototype Screen 3" onclick="openModal(this)" style="cursor:pointer;">
                 </div>
             </div>
             <div id="tab-video" class="tab-panel">
@@ -658,6 +659,14 @@ section { padding: 140px 0; }
                     <video controls muted loop playsinline webkit-playsinline>
                         <source src="images/video_screenrecording.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
                         <source src="images/video_screenrecording.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div id="tab-marketing" class="tab-panel">
+                <div class="video-panel">
+                    <video controls playsinline webkit-playsinline style="width:100%; max-width:900px; border-radius:16px; box-shadow:0 20px 60px rgba(0,0,0,0.15);">
+                        <source src="images/MarketingVideo_AlinahDanish.mp4" type="video/mp4; codecs=avc1.42E01E,mp4a.40.2">
+                        <source src="images/MarketingVideo_AlinahDanish.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -671,8 +680,9 @@ section { padding: 140px 0; }
     <img class="modal-content" id="modalImage" alt="Expanded view">
 </div>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function switchTab(tab, btn) {
+    document.querySelectorAll('.tab-panel video').forEach(v => { v.pause(); v.currentTime = 0; });
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('tab-' + tab).classList.add('active');
