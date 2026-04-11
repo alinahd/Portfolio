@@ -90,12 +90,18 @@
       transition: opacity 0.18s;
     }
     .drawer a:hover { opacity: 1; }
+
+    /* KEY FIX: don't intercept taps when drawer is closed */
     .drawer-overlay {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,0.25); z-index: 199;
       opacity: 0; transition: opacity 0.4s ease;
+      pointer-events: none;
     }
-    .drawer-overlay.active { opacity: 1; }
+    .drawer-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
 
     /* HERO */
     .hero {
@@ -448,16 +454,16 @@
   <div class="section">
     <span class="eyebrow reveal">Overview</span>
     <h2 class="reveal d1">A resort that deserved<br>better than a template</h2>
-    <p class="body-text reveal d2">The Oasis Golf &amp; Aqua Resort is a members-only destination in Lahore — 1,350 kanals of land, a 9-hole USGA golf course, an aqua park, and 15+ leisure activities. I redesigned their website to match the calibre of the resort: a cinematic, editorial experience that makes you feel like you're missing out before you've even scrolled.</p>
+    <p class="body-text reveal d2">The Oasis Golf &amp; Aqua Resort is a members-only destination in Lahore — 1,350 kanals of land, a 9-hole USGA golf course, an aqua park, and 15+ leisure activities. </p>
     <p class="body-text reveal d3">The resort sent a select group of previous interns a design challenge to reimagine their digital presence. This is what I submitted.</p>
-    <p class="body-text reveal d3">The goal was dual: elevate brand perception to attract affluent families and corporate clients, and drive membership enquiries — both equally.</p>
+    <p class="body-text reveal d3">I redesigned their website to match the calibre of the resort: a cinematic, editorial experience that makes you feel like you're missing out before you've even scrolled. The goal was dual: elevate brand perception to attract affluent families and corporate clients, and drive membership enquiries — both equally.</p>
   </div>
 
   <!-- BEFORE / AFTER -->
   <div class="section">
     <span class="eyebrow reveal">The Problem</span>
     <h2 class="reveal d1">Before &amp; After</h2>
-    <p class="body-text reveal d2">The original site was a generic Bootstrap template — uniform sliders, stock image grids, no sense of place or prestige. Nothing made you feel the resort was worth belonging to.</p>
+    <p class="body-text reveal d2">The original site was made up of uniform sliders and multiple image grids. The original site had the information but not the experience. It communicated what the resort offered without communicating why it was worth belonging to — and there's a big difference between the two. The redesign was about closing that gap: making the site feel as considered as the resort itself.</p>
     <div class="ba-wrap reveal d2">
       <div class="ba-tabs">
         <button class="ba-tab active" onclick="switchTab(this,'before')">Original Site</button>
@@ -470,7 +476,7 @@
         <img src="images/redesign3.png" alt="Redesign" style="width:100%; display:block;" />
       </div>
     </div>
-    <span class="caption reveal">Toggle between the original Bootstrap site and the redesign</span>
+    <span class="caption reveal">Toggle between the original site and the redesign</span>
   </div>
 
   <!-- RESEARCH -->
@@ -548,7 +554,7 @@
     <p class="body-text reveal d3">Experience cards use an asymmetric layout — Aqua gets the dominant tall left column, Golf and Leisure stack right — rather than a uniform grid. Visual hierarchy that mirrors the resort's offering without flattening everything to equal weight.</p>
 
     <div class="video-wrap" onclick="toggleVideo(this)">
-      <video src="images/oasisvideo2.mp4"loop playsinline></video>
+      <video src="images/oasisvideo2.mp4" loop playsinline></video>
       <div class="video-overlay">
         <div class="play-ring">
           <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
@@ -627,16 +633,26 @@
   </div>
 
   <!-- VIEW REDESIGNED SITE CTA -->
-  <div class="view-site-band">
-    <span class="eyebrow">Live Site</span>
+<!-- VIEW REDESIGNED SITE CTA -->
+<div class="view-site-band">
+    <span class="eyebrow">Live Sites</span>
     <h2>See it in the browser</h2>
-    <a class="view-site-link" href="https://alinahd.github.io/oasisgolfandaquaresort/index.html" target="_blank" rel="noopener">
-      View redesigned site
-      <svg viewBox="0 0 24 24">
-        <line x1="7" y1="17" x2="17" y2="7"/>
-        <polyline points="7 7 17 7 17 17"/>
-      </svg>
-    </a>
+    <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+      <a class="view-site-link" href="https://alinahd.github.io/oasisgolfandaquaresort/index.html" target="_blank" rel="noopener">
+        My redesign
+        <svg viewBox="0 0 24 24">
+          <line x1="7" y1="17" x2="17" y2="7"/>
+          <polyline points="7 7 17 7 17 17"/>
+        </svg>
+      </a>
+      <a class="view-site-link" href="https://www.theoasis.com.pk" target="_blank" rel="noopener" style="background:transparent; color:var(--navy); border-color:var(--navy);">
+        Current site
+        <svg viewBox="0 0 24 24">
+          <line x1="7" y1="17" x2="17" y2="7"/>
+          <polyline points="7 7 17 7 17 17"/>
+        </svg>
+      </a>
+    </div>
   </div>
 
   <div class="bottom-pad"></div>
