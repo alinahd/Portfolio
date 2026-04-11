@@ -36,28 +36,47 @@
       overflow-x: hidden;
     }
 
-    /* NAV */
+    /* ── NAV (homepage style) ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      display: flex; justify-content: space-between; align-items: center;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 64px;
+      align-items: center;
       padding: 26px 52px;
-      background: rgba(255,255,255,0.93);
+      background: #fff;
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
+
     nav a.logo {
-      font-family: var(--portfolio);
-      font-size: 13px; letter-spacing: 0.05em;
-      color: var(--ink); text-decoration: none;
+      font-size: 17px;
+      font-weight: 500;
+      color: #0a0a0a;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      text-decoration: none;
+      font-family: var(--sans);
     }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      font-family: var(--portfolio);
-      font-size: 12px; letter-spacing: 0.06em;
-      color: var(--ink); text-decoration: none;
-      opacity: 0.45; transition: opacity 0.18s;
+
+    .nav-group {
+      display: flex;
+      gap: 28px;
+      align-items: center;
     }
-    .nav-links a:hover { opacity: 1; }
+
+    .nav-group a {
+      font-size: 14px;
+      font-weight: 450;
+      color: #0a0a0a;
+      text-decoration: none;
+      transition: color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      white-space: nowrap;
+      letter-spacing: -0.006em;
+      font-family: var(--sans);
+    }
+
+    .nav-group a:hover { color: #666666; }
 
     /* Hamburger */
     .ham {
@@ -66,42 +85,41 @@
       background: none; border: none; z-index: 201;
     }
     .ham span {
-      width: 22px; height: 2px; background: var(--ink);
-      border-radius: 2px; transition: all 0.3s ease;
+      width: 24px; height: 2px; background: #0a0a0a;
+      border-radius: 2px; transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
       display: block;
     }
-    .ham.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .ham.active span:nth-child(1) { transform: rotate(45deg) translate(6px, 6px); }
     .ham.active span:nth-child(2) { opacity: 0; }
-    .ham.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    .ham.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
 
-    /* Drawer */
-    .drawer {
-      position: fixed; top: 0; right: -100%; width: 260px; height: 100vh;
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
       background: var(--white); z-index: 200;
       padding: 80px 32px 32px;
-      display: flex; flex-direction: column; gap: 24px;
-      box-shadow: -2px 0 20px rgba(0,0,0,0.08);
+      box-shadow: -2px 0 20px rgba(0,0,0,0.1);
       transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
     }
-    .drawer.active { right: 0; }
-    .drawer a {
-      font-family: var(--portfolio); font-size: 15px;
-      color: var(--ink); text-decoration: none; opacity: 0.7;
-      transition: opacity 0.18s;
+    .mobile-menu.active { right: 0; }
+    .mobile-menu-content { display: flex; flex-direction: column; gap: 32px; }
+    .mobile-nav-section { display: flex; flex-direction: column; gap: 20px; }
+    .mobile-nav-section a {
+      font-size: 16px; font-weight: 450;
+      color: #0a0a0a; text-decoration: none;
+      transition: color 0.2s; letter-spacing: -0.006em;
+      font-family: var(--sans);
     }
-    .drawer a:hover { opacity: 1; }
+    .mobile-nav-section a:hover { color: #666666; }
 
-    /* KEY FIX: don't intercept taps when drawer is closed */
-    .drawer-overlay {
+    .menu-overlay {
       display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.25); z-index: 199;
+      background: rgba(0,0,0,0.3); z-index: 199;
       opacity: 0; transition: opacity 0.4s ease;
       pointer-events: none;
     }
-    .drawer-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
+    .menu-overlay.active { opacity: 1; pointer-events: auto; }
 
     /* HERO */
     .hero {
@@ -301,13 +319,6 @@
       display: block;
       line-height: 0;
     }
-    .mobile-frame.placeholder {
-      aspect-ratio: 9/19;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--sans); font-size: 10px; font-weight: 300;
-      letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted);
-      line-height: normal;
-    }
     .mobile-frame img {
       width: 100%; height: auto;
       display: block; object-fit: unset;
@@ -367,11 +378,19 @@
     .img-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; margin-top: 88px; border-top: 1px solid var(--border); }
     .img-strip img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
-    @media (max-width: 720px) {
-      nav { padding: 18px 24px; }
-      .nav-links { display: none; }
+    @media (max-width: 968px) {
+      nav {
+        grid-template-columns: 1fr auto;
+        gap: 28px;
+        padding: 20px 24px;
+      }
+      .nav-group { display: none; }
       .ham { display: flex; }
-      .drawer-overlay { display: block; }
+      .mobile-menu { display: block; }
+      .menu-overlay { display: block; }
+    }
+
+    @media (max-width: 720px) {
       .content { padding: 0 24px; }
       .hero-meta { flex-direction: column; gap: 22px; }
       .ref-grid, .two-col, .mobile-row, .swatch-row { grid-template-columns: 1fr; }
@@ -386,31 +405,44 @@
 </head>
 <body>
 
-<!-- NAV -->
+<!-- NAV (homepage style) -->
 <nav>
   <a class="logo" href="homepage.html">Alinah Danish</a>
-  <ul class="nav-links">
-    <li><a href="homepage.html">Work</a></li>
-    <li><a href="archive.html">Archive</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a></li>
-    <li><a href="mailto:alinahdanish13@gmail.com">Email</a></li>
-    <li><a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a></li>
-  </ul>
+
+  <div class="nav-group">
+    <a href="homepage.html">Work</a>
+    <a href="archive.html">Archive</a>
+    <a href="about.html">About</a>
+    <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+  </div>
+
+  <div class="nav-group">
+    <a href="mailto:alinahdanish13@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+  </div>
+
   <button class="ham" id="ham" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
 
-<!-- Mobile drawer -->
-<div class="drawer-overlay" id="drawerOverlay"></div>
-<div class="drawer" id="drawer">
-  <a href="homepage.html">Work</a>
-  <a href="archive.html">Archive</a>
-  <a href="about.html">About</a>
-  <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
-  <a href="mailto:alinahdanish13@gmail.com">Email</a>
-  <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+<!-- Mobile menu overlay -->
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<!-- Mobile menu drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu-content">
+    <div class="mobile-nav-section">
+      <a href="homepage.html">Work</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+      <a href="Alinah Danish Resume.pdf#view=FitH" target="_blank">Resume</a>
+    </div>
+    <div class="mobile-nav-section">
+      <a href="mailto:alinahdanish13@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
+    </div>
+  </div>
 </div>
 
 <!-- HERO -->
@@ -633,8 +665,7 @@
   </div>
 
   <!-- VIEW REDESIGNED SITE CTA -->
-<!-- VIEW REDESIGNED SITE CTA -->
-<div class="view-site-band">
+  <div class="view-site-band">
     <span class="eyebrow">Live Sites</span>
     <h2>See it in the browser</h2>
     <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
@@ -700,21 +731,21 @@
     }
   }
 
-  // Drawer menu
+  // Nav / mobile menu
   const ham = document.getElementById('ham');
-  const drawer = document.getElementById('drawer');
-  const drawerOverlay = document.getElementById('drawerOverlay');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
 
-  function toggleDrawer() {
+  function toggleMenu() {
     ham.classList.toggle('active');
-    drawer.classList.toggle('active');
-    drawerOverlay.classList.toggle('active');
-    document.body.style.overflow = drawer.classList.contains('active') ? 'hidden' : '';
+    mobileMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+    document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
   }
 
-  ham.addEventListener('click', toggleDrawer);
-  drawerOverlay.addEventListener('click', toggleDrawer);
-  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', toggleDrawer));
+  ham.addEventListener('click', toggleMenu);
+  menuOverlay.addEventListener('click', toggleMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', toggleMenu));
 </script>
 </body>
 </html>
