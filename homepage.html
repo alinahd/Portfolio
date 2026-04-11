@@ -89,6 +89,7 @@ body {
     border: none;
     z-index: 1001;
     position: relative;
+    align-self: center;
 }
 
 .hamburger span {
@@ -166,10 +167,13 @@ body {
     z-index: 999;
     opacity: 0;
     transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    /* KEY FIX: don't intercept taps when inactive */
+    pointer-events: none;
 }
 
 .menu-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* Hero Section */
@@ -255,6 +259,8 @@ body {
     -webkit-tap-highlight-color: rgba(0,0,0,0.1);
     -webkit-touch-callout: none;
     touch-action: manipulation;
+    /* ensure cards sit above any stacking issues */
+    z-index: 1;
 }
 
 .project-card:active {
@@ -357,7 +363,7 @@ body {
     max-width: 600px;
 }
 
-/* Large — right column, big enough to not feel tiny */
+/* Large — right column */
 .large {
     grid-column: span 5;
 }
@@ -443,52 +449,53 @@ body {
         grid-template-columns: 1fr auto;
         gap: 28px;
         padding: 40px 24px 24px 24px;
+        z-index: 1; /* don't bleed over cards */
     }
-    
+
     .nav-group {
         display: none;
     }
-    
+
     .hamburger {
         display: flex;
     }
-    
+
     .mobile-menu {
         display: block;
     }
-    
+
     .menu-overlay {
         display: block;
     }
-    
+
     .hero {
         padding: 72px 24px 56px 24px;
     }
-    
+
     .hero h2 {
         font-size: 38px;
         letter-spacing: -0.024em;
     }
-    
+
     .hero-meta {
         gap: 40px;
     }
-    
+
     .work-section {
         padding: 48px 24px 72px 24px;
     }
-    
+
     .work-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
-    
+
     .featured,
     .large,
     .half {
         grid-column: span 2;
     }
-    
+
     .featured .image-container,
     .large .image-container {
         height: 420px;
@@ -498,19 +505,19 @@ body {
     .large .project-label {
         font-size: 17px;
     }
-    
+
     .image-container {
         height: 340px;
     }
-    
+
     .project-tagline {
         opacity: 0.8;
     }
-    
+
     .project-card:hover {
         transform: none;
     }
-    
+
     .project-card:hover img {
         transform: none;
     }
@@ -520,58 +527,58 @@ body {
     .header-section {
         padding: 32px 20px 20px 20px;
     }
-    
+
     .hero {
         padding: 56px 20px 40px 20px;
     }
-    
+
     .hero h2 {
         font-size: 32px;
         letter-spacing: -0.020em;
         line-height: 1.2;
     }
-    
+
     .hero-meta {
         gap: 32px;
         margin-top: 40px;
     }
-    
+
     .meta-value {
         font-size: 14px;
     }
-    
+
     .work-section {
         padding: 40px 20px 64px 20px;
     }
-    
+
     .work-grid {
         grid-template-columns: 1fr;
         gap: 32px;
     }
-    
+
     .featured,
     .large,
     .half {
         grid-column: span 1;
     }
-    
+
     .image-container,
     .featured .image-container,
     .large .image-container {
         height: 300px;
     }
-    
+
     .featured .project-label,
     .large .project-label,
     .project-label {
         font-size: 16px;
     }
-    
+
     .mobile-menu {
         width: 100%;
         right: -100%;
     }
-    
+
     .project-tagline {
         opacity: 1;
     }
@@ -588,19 +595,19 @@ body {
     <div class="brand">
         <h1>Alinah Danish</h1>
     </div>
-    
+
     <div class="nav-group">
         <a href="homepage.html">Work</a>
         <a href="archive.html">Archive</a>
         <a href="about.html">About</a>
         <a href="Alinah Danish Resume2 .pdf#view=FitH" target="_blank">Resume</a>
     </div>
-    
+
     <div class="nav-group">
         <a href="mailto:alinahdanish13@gmail.com">Email</a>
         <a href="https://www.linkedin.com/in/alinah-danish-b50282298/" target="_blank">LinkedIn</a>
     </div>
-    
+
     <button class="hamburger" id="hamburger" aria-label="Menu">
         <span></span>
         <span></span>
@@ -627,7 +634,7 @@ body {
 <!-- Hero Section -->
 <div class="hero">
     <h2>I design digital experiences that bridge creativity and technology through research, prototyping, and an obsession with getting it right.</h2>
-    
+
     <div class="hero-meta">
         <div class="meta-item">
             <span class="meta-label">Currently</span>
@@ -643,7 +650,7 @@ body {
 <!-- Work Section -->
 <div class="work-section">
     <div class="section-label">Selected Work</div>
-    
+
     <div class="work-grid">
 
         <!-- Oasis — featured left -->
@@ -675,7 +682,7 @@ body {
                 <div class="project-tagline">Interactive stories for speech practice.</div>
             </div>
         </a>
-        
+
         <!-- Eco Taschen — half -->
         <a href="taschen.html" class="project-card half">
             <div class="image-container">
@@ -690,7 +697,7 @@ body {
                 <div class="project-tagline">Exploring what eco-friendly design looks like.</div>
             </div>
         </a>
-        
+
         <!-- Coming Soon — half -->
         <div class="project-card half coming-soon-card">
             <div class="image-container">
